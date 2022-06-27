@@ -19,7 +19,47 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 			?>
-		
+
+			<section class="home-artists">
+				<!-- cpt pull 3 highlight artists wit their images -->
+				<!-- perma link to lineup page -->
+			</section>
+			<section class="home-cards">
+				<!-- ACF -->
+			<?php 
+			// check to make sure the ACF plugin exists
+			if (function_exists ('get_field')) {
+			
+				$rows = get_field('home_page_image_content_links');
+				if( $rows ) {
+
+					foreach( $rows as $row ) {
+					$title = $row['content_title'];
+					$subtitle = $row['content_subtitle'];
+					$excerpt = $row['content_excerpt'];
+					$link = $row['content_page_pink'];
+					$image = $row['content_image'];
+
+					echo wpautop( $title );
+					echo wpautop( $subtitle );
+					echo wpautop( $excerpt );
+					echo wpautop( $link );
+					// echo wpautop( $image );
+					?>
+					<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+					<?php
+
+					if( $image ): ?>
+						<img class="home-content-link-image" src="<?php echo $image['url']; ?>" alt="<?php echo $title ; ?>" />
+					<?php endif;
+				}
+				}
+			}
+			?>
+			</section>
+			<section class="home-vendors">
+				<!-- ACF -->
+			</section>
 		
 			<h2>Latest News Posts </h2>
 			<?php 
