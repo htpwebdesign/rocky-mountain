@@ -185,3 +185,23 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 // import Custom Post Types //
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Remove block editor on pages with listed IDs
+function fwd_post_filter( $use_block_editor, $post ) {
+ // # in the array is the ID of the page you want to remove block editor
+    $page_ids = array( 34, 28, 40, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20);
+    if ( in_array( $post->ID, $page_ids ) ) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
+
+// Register Google Maps 
+
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyAmUF77vY2nwdJ-G-V9ZWXxQZs1OhOIcfA';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
