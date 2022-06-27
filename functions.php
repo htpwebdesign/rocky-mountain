@@ -142,6 +142,7 @@ function rocky_mountain_scripts() {
 	wp_style_add_data( 'rocky-mountain-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'rocky-mountain-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'rocky-mountain-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -189,7 +190,7 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 // Remove block editor on pages with listed IDs
 function fwd_post_filter( $use_block_editor, $post ) {
  // # in the array is the ID of the page you want to remove block editor
-    $page_ids = array( 34, 28, 40, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20);
+    $page_ids = array( 34, 28, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20);
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
