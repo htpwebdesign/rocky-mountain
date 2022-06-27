@@ -27,7 +27,7 @@ get_header();
 		
         if( have_rows('accessibility_topic') ):
 				// Loop through rows.
-				while( have_rows('accessibility_topic') ) : the_row();
+			while( have_rows('accessibility_topic') ) : the_row();
 					// Load sub field value.
 					?>
 					<h2><?php the_sub_field('section_title'); ?></h2>
