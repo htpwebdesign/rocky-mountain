@@ -44,6 +44,45 @@ get_header();
 		endif;
 		?>
 
+        <section>
+			<h2>FAQ</h2>
+            <div>
+                <p>Sort content goes here. Filter by taxonomy (general, admission, camping, etc)</p>
+            </div>
+        </section>
+
+        <section>
+		<?php
+			$args = array( 
+				// matches with unique name we gave the cpt
+				'post_type' => 'rmf-faq',
+				'posts_per_page' => -1
+			);
+
+			$query = new WP_Query( $args );
+			if ($query -> have_posts()) {
+				
+				while ( $query -> have_posts()) {
+					$query -> the_post();
+					?>
+	
+					<button class="accordion"><?php the_title(); ?></button>
+					<div class="panel">
+
+					<?php
+					the_field('faq_description');
+					?>
+					</div>
+					<?php
+
+				}
+				?>
+				<?php
+				wp_reset_postdata();
+			}
+		?>
+		</section>
+
 	</main><!-- #primary -->
 
 <?php
