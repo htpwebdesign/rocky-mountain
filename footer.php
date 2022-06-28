@@ -51,7 +51,7 @@
 		<div>
 		<h2>Sign up for updates!</h2>
 			<p>Stay up to date on news about our Vendors, Workshops and Musical Line-Up!</p>
-			<?php echo do_shortcode('[contact-form-7 id="349" title="Newsletter Signup"]') ?>
+			<?php echo do_shortcode('[contact-form-7 id="378" title="Newsletter Sign Up"]') ?>
 		</div>
 
 		<h2>Follow Us!</h2>
