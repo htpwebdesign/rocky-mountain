@@ -148,7 +148,8 @@ function rocky_mountain_scripts() {
 
 	wp_enqueue_script( 'rocky-mountain-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'rocky-mountain-accordion', get_template_directory_uri() . '/js/accordion.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery'));
+	wp_enqueue_script('isotope-settings', get_template_directory_uri() . '/js/isotope.js', array('isotope', 'jquery'));
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -211,3 +212,45 @@ function my_acf_google_map_api( $api ){
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+function isotope_musician_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-music-genre');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-age-group');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-featured-musician');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
+
+function isotope_vendor_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-vendor-type');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
+
+function isotope_workshop_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-workshop-type');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-age-group');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
