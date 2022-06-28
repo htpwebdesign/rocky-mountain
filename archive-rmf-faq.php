@@ -49,9 +49,21 @@ get_header();
             <div>
                 <p>Sort content goes here. Filter by taxonomy (general, admission, camping, etc)</p>
             </div>
+			<div class="button-group filter-button-group">
+				<button data-filter="*">Show All</button>
+				<?php
+				$terms = get_terms( array(
+					'taxonomy' => 'rmf-category-type',
+					'hide_empty' => false,
+				));
+				foreach($terms as $term) {
+					echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+				}
+			?>
+			</div>
         </section>
 
-        <section>
+        <section class="grid">
 		<?php
 			$args = array( 
 				// matches with unique name we gave the cpt
@@ -64,6 +76,7 @@ get_header();
 				
 				while ( $query -> have_posts()) {
 					$query -> the_post();
+					echo '<article class="grid-item '.isotope_faq_classes(get_the_id()).'">';
 					?>
 	
 					<button class="accordion"><?php the_title(); ?></button>
@@ -74,6 +87,7 @@ get_header();
 					?>
 					</div>
 					<?php
+					echo '</article>';
 
 				}
 				?>
