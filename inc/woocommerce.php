@@ -225,3 +225,14 @@ if ( ! function_exists( 'rocky_mountain_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+// Add Product description to shop page (now tickets page), right below the title and above price/add 2 cart
+function rocky_mountain_woocommerce_description_shop_page() {
+	// the_content();
+	global $product;
+
+	// echo $product->post->post_excerpt;
+	echo wp_trim_words( $product->post->post_excerpt, 12 );
+}
+
+add_action( 'woocommerce_shop_loop_item_title', 'rocky_mountain_woocommerce_description_shop_page', 10 );
