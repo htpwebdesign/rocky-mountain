@@ -9,7 +9,19 @@
 
 get_header();
 ?>
-
+    <div class="button-group filter-button-group">
+        <button data-filter="*">Show All</button>
+        <?php
+        $terms = get_terms( array(
+            'taxonomy' => 'rmf-vendor-type',
+            'hide_empty' => false,
+        ));
+        foreach($terms as $term) {
+            echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+        }
+        ?>
+    </div>
+<div class="grid">
 <main>
     <header>
         <?php
@@ -31,9 +43,9 @@ get_header();
         while ( $query->have_posts() ) {
             $query->the_post();
 
-            echo '<article>';
+            echo '<article class="grid-item '.isotope_vendor_classes(get_the_id()).'">';
                 echo '<h2>'. get_the_title() .'</h2>';
-                the_post_thumbnail( );
+                the_post_thumbnail( 'large' );
                 the_excerpt();
             echo '</article>';
 
@@ -42,3 +54,4 @@ get_header();
     }
     ?>
 </main>
+</div>

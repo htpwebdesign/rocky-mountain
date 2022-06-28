@@ -19,6 +19,22 @@ get_header();
         foreach($terms as $term) {
             echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
         }
+
+        $terms = get_terms( array(
+            'taxonomy' => 'rmf-age-group',
+            'hide_empty' => false,
+        ));
+        foreach($terms as $term) {
+            echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+        }
+
+        $terms = get_terms( array(
+            'taxonomy' => 'rmf-featured-musician',
+            'hide_empty' => false,
+        ));
+        foreach($terms as $term) {
+            echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
+        }
     ?>
     </div>
 
@@ -43,9 +59,9 @@ get_header();
         while ( $query->have_posts() ) {
             $query->the_post();
 
-            echo '<article class="grid-item '.isotope_classes(get_the_id()).'">';
+            echo '<article class="grid-item '.isotope_musician_classes(get_the_id()).'">';
                 echo '<h2>'. get_the_title() .'</h2>';
-                the_post_thumbnail( );
+                the_post_thumbnail( 'large' );
                 get_categories();
                 if ( function_exists ( 'get_field' ) ) {
 			

@@ -208,9 +208,37 @@ function my_acf_google_map_api( $api ){
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-function isotope_classes($id){
+function isotope_musician_classes($id){
 	$classes = "";
 	$terms = wp_get_post_terms( get_the_id(), 'rmf-music-genre');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-age-group');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-featured-musician');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
+
+function isotope_vendor_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-vendor-type');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
+
+function isotope_workshop_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-workshop-type');
 	foreach ($terms as $term) {
 		$classes .= $term->slug.' ';
 	}
