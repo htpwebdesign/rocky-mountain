@@ -20,6 +20,37 @@ get_header();
 			get_template_part( 'template-parts/content', 'page' );
 			?>
 
+			<section class="home-hero">
+			
+
+			<?php
+			// check to make sure the ACF plugin exists
+			if (function_exists ('get_field')) {
+			
+			if( get_field('home_page_hero') ): 
+				$hero = get_field('home_page_hero'); 
+								?>
+				<div id="hero">
+					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
+					<section class="content">
+						<h1><?php echo $hero['hero_title']; ?></h1>
+						<h4><?php echo $hero['hero_subtitle']; ?></h4>
+			
+						<div>
+							<a href="<?php echo esc_url($hero['hero_primary_cta']['url']); ?>">
+							<?php echo esc_html( $hero['hero_primary_cta']['title'] ); ?></a>
+
+							<a href="<?php echo esc_url($hero['hero_secondary_cta']['url']); ?>">
+							<?php echo esc_html( $hero['hero_secondary_cta']['title'] ); ?></a>
+						</div>
+
+					</section>
+				</div>
+				
+			<?php endif; 
+			} ?>
+			</section>
+
 			<section class="home-artists">
 				<!-- cpt pull 3 highlight artists wit their images -->
 				<!-- perma link to lineup page -->
@@ -57,10 +88,7 @@ get_header();
 			}
 			?>
 			</section>
-			<section class="home-vendors">
-				<!-- ACF -->
-			</section>
-		
+
 			<h2>Latest News Posts </h2>
 			<?php 
 				$args = array( 
