@@ -52,7 +52,9 @@ function rocky_mountain_setup() {
 			'menu-1' => esc_html__( 'Primary', 'rocky-mountain' ),
 			'social' => esc_html__( 'Social Menu Location', 'rocky-mountain' ),
 			'legal' => esc_html__( 'Legal Links Location', 'rocky-mountain' ),
-			'footer' => esc_html__( 'Footer Menu Location', 'fwd' ),
+			'footer' => esc_html__( 'Footer Menu Location', 'rocky-mountain' ),
+			'ecommerce' => esc_html__( 'E-commerce Header Menu', 'rocky-mountain' ),
+
 		)
 	);
 
