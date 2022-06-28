@@ -254,3 +254,12 @@ function isotope_workshop_classes($id){
 	}
 	return $classes;
 }
+
+function isotope_faq_classes($id){
+	$classes = "";
+	$terms = wp_get_post_terms( get_the_id(), 'rmf-category-type');
+	foreach ($terms as $term) {
+		$classes .= $term->slug.' ';
+	}
+	return $classes;
+}
