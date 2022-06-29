@@ -42,7 +42,7 @@ get_header();
 <main>
     <header>
         <?php
-        the_archive_title( '<h1>', '</h1>' );
+        post_type_archive_title( '<h1>', '</h1>' );
         the_archive_description( '<div>', '</div>')
         ?>
     </header>
@@ -64,8 +64,6 @@ get_header();
                 the_post_thumbnail( 'large' );
                 get_categories();
                 if ( function_exists ( 'get_field' ) ) {
-			
-		 
 			
                     if ( get_field( 'band_description' ) ) {
                         echo '<p>'. the_field( 'band_description' ) .'</p>';

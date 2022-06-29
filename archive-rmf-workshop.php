@@ -35,7 +35,7 @@ get_header();
 <main>
     <header>
         <?php
-        the_archive_title( '<h1>', '</h1>' );
+        post_type_archive_title( '<h1>', '</h1>' );
         the_archive_description( '<div>', '</div>')
         ?>
     </header>
@@ -56,7 +56,13 @@ get_header();
             echo '<article class="grid-item '.isotope_workshop_classes(get_the_id()).'">';
                 echo '<h2>'. get_the_title() .'</h2>';
                 the_post_thumbnail( 'large' );
-                the_excerpt();
+                if ( function_exists ( 'get_field' ) ) {
+			
+                    if ( get_field( 'workshop_description' ) ) {
+                        echo '<p>'. the_field( 'workshop_description' ) .'</p>';
+                    }
+                };
+
             echo '</article>';
 
         }
@@ -64,3 +70,6 @@ get_header();
     }
     ?>
 </main>
+</div>
+<?php
+get_footer();
