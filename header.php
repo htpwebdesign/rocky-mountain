@@ -51,7 +51,7 @@
 		<?php 
 			// Banner on all pages other than home
 			$noFeatureImage = [80, 81, 79, 83, 82];
-			if ( !is_front_page() && !is_page($noFeatureImage))  {
+			if ( !is_front_page() && !is_page($noFeatureImage) && !is_single())  {
 				echo the_post_thumbnail();
 			}
 		?>

@@ -28,7 +28,7 @@ get_header();
 		<p><?php the_field('process_description') ?></p>
 			
 		<div class="sign-up-form">
-			<?php do_shortcode('[contact-form-7 id="359" title="Vendor Sign-Up"]') ?>
+			<?php echo do_shortcode('[contact-form-7 id="359" title="Vendor Sign-Up"]') ?>
 		</div>
 
 		</article>
