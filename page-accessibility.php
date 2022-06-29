@@ -28,19 +28,21 @@ get_header();
         if( have_rows('accessibility_topic') ):
 				// Loop through rows.
 			while( have_rows('accessibility_topic') ) : the_row();
-					// Load sub field value.
-					?>
+				$image= get_sub_field('image');
+				// Load sub field value.
+				?>
+				<section>
 					<h2><?php the_sub_field('section_title'); ?></h2>
-                    <p><?php the_sub_field('content'); ?></p>
-                    <?php $image= get_sub_field('image'); ?> 
-                    <figure> 
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                    </figure>
-					<?php
-				// End loop.
-				endwhile;
-			endif;
-            ?>
+					<?php the_sub_field('content'); ?>
+					<figure> 
+						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					</figure>
+				</section>
+				<?php
+			// End loop.
+			endwhile;
+		endif;
+		?>
 
 	</main><!-- #main -->
 
