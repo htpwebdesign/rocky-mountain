@@ -28,7 +28,7 @@ get_header();
 		<p><?php the_field('process_description') ?></p>
 			
 		<div class="sign-up-form">
-			<?php the_content(); ?>
+			<?php do_shortcode('[contact-form-7 id="359" title="Vendor Sign-Up"]') ?>
 		</div>
 
 		</article>
@@ -38,5 +38,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
