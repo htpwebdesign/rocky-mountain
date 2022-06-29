@@ -37,7 +37,7 @@ get_header();
             	<article>
 					<h3><a href="<?php the_sub_field('accom_link') ?> "><?php the_sub_field('name') ?></a></h3>
 					<address><?php the_sub_field('address') ?></address>
-					<p><?php the_sub_field('phone_number')?></p>
+					<p><a href="tel: <?php the_sub_field('phone_number')?>"><?php the_sub_field('phone_number')?></a></p>
 					<figure>
 						<?php $image= get_sub_field('image'); ?>  
                         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
@@ -53,5 +53,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

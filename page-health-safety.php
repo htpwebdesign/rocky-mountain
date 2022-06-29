@@ -16,17 +16,9 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+        <h1><?php echo the_title(); ?></h1>
         <section>
             <?php
-            while ( have_posts() ) :
-                the_post();
-
-                get_template_part( 'template-parts/content', 'page' );
-
-
-            endwhile; // End of the loop.
-            
-            // Health Topics ex First Aid
             if( have_rows('topic') ):
                 // Loop through rows.
                 while( have_rows('topic') ) : the_row();
