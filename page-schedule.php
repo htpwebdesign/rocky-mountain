@@ -42,7 +42,9 @@ get_header();
                 $query = new WP_Query( $args );
             ?>
             <section>
-            <h3>Day 1</h3>
+            
+            <button class="accordion"><h3>Day 1</h3></button>
+            <div class="panel">
             <?php
             if ( $query -> have_posts() ){
                 while ( $query -> have_posts() ) {
@@ -61,9 +63,11 @@ get_header();
                 endforeach;
             }}
             ?>
+            </div>
             </section>
             <section>
-            <h3>Day 2</h3>
+            <button class="accordion"><h3>Day 2</h3></button>
+            <div class="panel">
             <?php
             if ( $query -> have_posts() ){
                 while ( $query -> have_posts() ) {
@@ -82,8 +86,8 @@ get_header();
                 endforeach;
             }}
             ?>
-        </div>
-        <div>
+            </div>
+            
             <section>
             <h2>Workshops</h2>
             <?php
@@ -97,7 +101,8 @@ get_header();
                 );
                 $query = new WP_Query( $args );
             ?>
-            <h3>Day 1</h3>
+            <button class="accordion"><h3>Day 1</h3></button>
+            <div class="panel">
             <?php
             if ( $query -> have_posts() ){
                 while ( $query -> have_posts() ) {
@@ -117,9 +122,11 @@ get_header();
                     endforeach;
             }}
             ?>
+            </div>
             </section>
             <section>
-            <h3>Day 2</h3>
+            <button class="accordion"><h3>Day 2</h3></button>
+            <div class="panel">
             <?php
             if ( $query -> have_posts() ){
                 while ( $query -> have_posts() ) {
@@ -138,6 +145,8 @@ get_header();
                     endforeach;
             }}
             ?>
+            </div>
+            </section>
         </div>
 
 
