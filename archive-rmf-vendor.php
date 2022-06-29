@@ -25,7 +25,7 @@ get_header();
 <main>
     <header>
         <?php
-        the_archive_title( '<h1>', '</h1>' );
+        post_type_archive_title( '<h1>', '</h1>' );
         the_archive_description( '<div>', '</div>')
         ?>
     </header>
@@ -55,3 +55,6 @@ get_header();
     ?>
 </main>
 </div>
+
+<?php
+get_footer();
