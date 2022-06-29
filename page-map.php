@@ -20,16 +20,16 @@ get_header();
 		<?php
 		while ( have_posts() ) : 
             the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-        
-        endwhile; // End of the loop.
 		?>
         <section>
             <p><?php the_field('map_description') ?></p>
             
-            <?php $image = get_field('general_map_image');?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']);?>" />
+            <?php 
+            $image = get_field('general_map_image');
+
+            if ($image) {
+                echo wp_get_attachment_image( $image['id'], 'large');
+            }?>
             
             <?php 
             if( have_rows ('map_locations') ):
@@ -45,6 +45,7 @@ get_header();
             endif;
             ?>
         </section>
+        <?php  endwhile; // End of the loop. ?>
 	</main><!-- #main -->
 
 <?php

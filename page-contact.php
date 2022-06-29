@@ -26,16 +26,6 @@ get_header();
 				<div class="entry-content">
 					<?php
 					the_content(); 
-					// if ( function_exists ( 'get_field' ) ) {
-				
-					// 	if ( get_field( 'address' ) ) {
-					// 		echo '<p>'. get_field( 'address' ) .'</p>';
-					// 	}
-				
-					// 	if ( get_field( 'email' ) ) {
-					// 		echo '<p>'. get_field( 'email' ) .'</p>';
-					// 	}
-					// } 
 					?>
 				</div>
 
@@ -46,5 +36,4 @@ get_header();
 		</main>
 
 <?php
-get_sidebar();
 get_footer();
