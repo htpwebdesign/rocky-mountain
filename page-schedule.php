@@ -20,15 +20,13 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-		endwhile; // End of the loop.
         ?>
         <section>
             <h1><?php the_title();?></h1>
             <p><?php the_field('description'); ?></p>
         </section>
 
-        <div>
+        <section>
             <h2>Musical Line Up</h2>
             <?php
             $date_now = date('2022-07-29');
@@ -63,7 +61,7 @@ get_header();
                 endforeach;
             }}
             ?>
-            </div>
+            </section>
             </section>
             <section>
             <button class="accordion"><h3>Day 2</h3></button>
@@ -149,7 +147,7 @@ get_header();
             </section>
         </div>
 
-
+		<?php endwhile; // End of the loop.?>
 	</main><!-- #main -->
 
 <?php

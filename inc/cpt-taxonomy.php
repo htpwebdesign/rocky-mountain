@@ -401,9 +401,9 @@ add_action( 'init', 'rmf_register_taxonomies');
 
 
 ///Flush Permalinks///
-function crog_rewrite_flush() {
-    c_rog_register_custom_post_types();
+function rmf_rewrite_flush() {
+    rmf_register_custom_post_types();
     flush_rewrite_rules();
-    crog_register_taxonomies();
+    rmf_register_taxonomies();
 }
-add_action( 'after_switch_theme', 'crog_rewrite_flush' );
+add_action( 'after_switch_theme', 'rmf_rewrite_flush' );
