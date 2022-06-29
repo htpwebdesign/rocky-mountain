@@ -9,6 +9,16 @@
 
 get_header();
 ?>
+
+<main>
+    <header>
+        <?php
+        post_type_archive_title( '<h1>', '</h1>' );
+        the_archive_description( '<div>', '</div>')
+        ?>
+    </header>
+    <div class="grid">
+
     <div class="button-group filter-button-group">
         <button data-filter="*">Show All</button>
         <?php
@@ -37,15 +47,8 @@ get_header();
         }
     ?>
     </div>
+    <div>
 
-<div class="grid">
-<main>
-    <header>
-        <?php
-        post_type_archive_title( '<h1>', '</h1>' );
-        the_archive_description( '<div>', '</div>')
-        ?>
-    </header>
     <?php
     $args = array(
         'post_type' => 'rmf-musician',
@@ -84,7 +87,9 @@ get_header();
         wp_reset_postdata();
     }
     ?>
+    </div>
+    </div>
 </main>
-</div>
+
 <?php
 get_footer();
