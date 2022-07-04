@@ -2,12 +2,6 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
-@import "navigation/woo-navigation";
-
-/* Sort Filter
---------------------------------------------- */
-@import "sort-filter/sort-filter";
-
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
@@ -35,25 +29,3 @@
 /* Accordions
 --------------------------------------------- */
 @import "accordions/accordions";
-
-/* Cards
---------------------------------------------- */
-@import "cards/recent-news";
-
-@import "cards/health-safety";
-
-@import "cards/first-aid";
-
-@import "cards/covid";
-
-@import "cards/accessibility";
-
-@import "cards/banned-items";
-
-@import "cards/travel-cards";
-
-@import "cards/getting-here";
-
-@import "cards/general-cards";
-
-@import "cards/home-page-ctas";

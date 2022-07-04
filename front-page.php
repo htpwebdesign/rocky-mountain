@@ -17,6 +17,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			get_template_part( 'template-parts/content', 'page' );
 			?>
 
 			<section class="home-hero">
@@ -28,16 +29,9 @@ get_header();
 				$hero = get_field('home_page_hero'); 
 								?>
 				<div id="hero">
-
-					<?php 
-						$image = $hero['hero_image'];
-
-						if ($image) {
-							echo wp_get_attachment_image( $image['id'], 'full');
-						}
-					?>
+					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
 					<article class="content">
-						<h1><?php echo the_title(); ?></h1>
+						<h1><?php echo $hero['hero_title']; ?></h1>
 						<h4><?php echo $hero['hero_subtitle']; ?></h4>
 			
 						<div>
@@ -53,11 +47,6 @@ get_header();
 				
 			<?php endif; 
 			} ?>
-
-					
-			</section>
-
-			<section class="home-artists">
 
 					<article>
 						<?php
@@ -83,6 +72,9 @@ get_header();
 						} ?>
 					
 					</article>
+			</section>
+
+			<section class="home-artists">
 				<!-- cpt pull 3 highlight artists wit their images -->
 				<!-- perma link to lineup page -->
 				<?php 
@@ -122,15 +114,12 @@ get_header();
 							}
 							// the_content();
 							// ECHO OUT THE SPECIALITY
+						echo '</article>';
 
 						echo '<figure>';
 						//  insert image
-						the_post_thumbnail('medium_large');
+							the_post_thumbnail('medium_large');
 						echo '</figure>';
-
-						echo '</article>';
-
-						
 					}
 					wp_reset_postdata();
 				} 
@@ -150,76 +139,27 @@ get_header();
 					$title = $row['content_title'];
 					$subtitle = $row['content_subtitle'];
 					$excerpt = $row['content_excerpt'];
-					$link = $row['content_page_link'];
+					$link = $row['content_page_pink'];
 					$image = $row['content_image'];
 
-					?>
-					<article>
-					<?php
-					echo '<h3>'. $title .'</h3>';
-					echo '<h4>'. $subtitle .'</h4>';
-					echo '<p>'. $excerpt .'</p>';
-					// echo $link;
+					echo wpautop( $title );
+					echo wpautop( $subtitle );
+					echo wpautop( $excerpt );
+					echo wpautop( $link );
 					// echo wpautop( $image );
 					?>
 					<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
 					<?php
-					if ($image) {
-						echo wp_get_attachment_image( $image['id'], 'large');
-					}
-					?>
-					</article>
-					<?php
+
+					if( $image ): ?>
+						<img class="home-content-link-image" src="<?php echo $image['url']; ?>" alt="<?php echo $title ; ?>" />
+					<?php endif;
 				}
 				}
 			}
 			?>
 			</section>
 
-			<section class="home-vendor">
-				<!-- ACF -->
-			<?php 
-			// check to make sure the ACF plugin exists
-			if (function_exists ('get_field')) {
-			
-				$rows = get_field('home_page_vendor');
-				if( $rows ) {
-
-					foreach( $rows as $row ) {
-					$title = $row['content_title'];
-					$subtitle = $row['content_subtitle'];
-					$excerpt = $row['content_excerpt'];
-					$link = $row['content_page_link'];
-					$link_secondary = $row['content_page_link_secondary'];
-
-					$image = $row['content_image'];
-
-					?>
-					<article>
-					<?php
-					echo '<h3>'. $title .'</h3>';
-					echo '<h4>'. $subtitle .'</h4>';
-					echo '<p>'. $excerpt .'</p>';
-					// echo $link;
-					// echo $link_secondary;
-					// echo wpautop( $image );
-					?>
-					<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
-					<a href='<?php echo $link_secondary ?>'> <?php echo $title ?> Sign-up ></a>
-					<?php
-					if ($image) {
-						echo wp_get_attachment_image( $image['id'], 'large');
-					}
-					?>
-					</article>
-					<?php
-				}
-				}
-			}
-			?>
-			</section>
-
-			<section class="home-news">
 			<h2>News  </h2>
 			<?php 
 				$args = array( 
@@ -272,4 +212,5 @@ get_header();
 	</main><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();
