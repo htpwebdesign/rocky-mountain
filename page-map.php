@@ -20,7 +20,9 @@ get_header();
 		<?php
 		while ( have_posts() ) : 
             the_post();
+            
 		?>
+        <h1><?php the_title();?></h1>
         <section>
             <p><?php the_field('map_description') ?></p>
             

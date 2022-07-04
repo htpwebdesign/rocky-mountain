@@ -43,11 +43,11 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<section class="ecomm-nav">
+		<nav class="ecomm-nav">
 			<?php 
 			// My Account, Cart, Checkout links 
 			wp_nav_menu( array("theme_location" => "ecommerce")); ?>
-		</section>
+		</nav>
 		<?php 
 			// Banner on all pages other than home
 			$noFeatureImage = [80, 81, 79, 83, 82];

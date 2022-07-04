@@ -15,9 +15,12 @@
 get_header();
 ?>
 	<main id="primary" class="site-main">
+		<h1><?php the_title();?></h1>
 		<?php
 		while ( have_posts() ) :
+			
 			the_post();
+
 			if( have_rows('accessibility_topic') ):
 					// Loop through rows.
 				while( have_rows('accessibility_topic') ) : the_row();

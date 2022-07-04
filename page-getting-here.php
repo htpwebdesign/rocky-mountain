@@ -20,6 +20,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
             ?>
+            <h1><?php the_title();?></h1>
             <section>
                 <p><?php the_field('getting_here_description') ?></p>
             </section>
