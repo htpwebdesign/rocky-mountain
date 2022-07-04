@@ -20,7 +20,6 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-            post_type_archive_title( '', false );
         ?>
         <section>
             <h1><?php the_title();?></h1>

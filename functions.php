@@ -137,6 +137,16 @@ function rocky_mountain_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	//Enqueue the Google Maps script from the Google Server
+	wp_enqueue_script( 'google-map',
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUF77vY2nwdJ-G-V9ZWXxQZs1OhOIcfA',
+		array(),
+		_S_VERSION,
+		true );
+		// Enqueue ACF helper code to display the Google Map
+	wp_enqueue_script( 'google-map-init', get_template_directory_uri() .
+		'/js/google-map-script.js', array( 'google-map', 'jquery' ), _S_VERSION,
+		true );	
 }
 add_action( 'wp_enqueue_scripts', 'rocky_mountain_scripts' );
 
