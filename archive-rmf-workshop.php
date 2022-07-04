@@ -9,6 +9,16 @@
 
 get_header();
 ?>
+<main>
+    <header>
+        <?php
+        post_type_archive_title( '<h1>', '</h1>' );
+        the_archive_description( '<div>', '</div>')
+        ?>
+    </header>
+
+<div class="grid">
+  
     <div class="button-group filter-button-group">
         <button data-filter="*">Show All</button>
         <?php
@@ -29,18 +39,10 @@ get_header();
             echo '<button data-filter=".'.$term->slug.'">'.$term->name.'</button>';
         }
         ?>
-
     </div>
-<div class="grid">
-<main>
-    <header>
-        <?php
-        post_type_archive_title( '<h1>', '</h1>' );
-        the_archive_description( '<div>', '</div>')
-        ?>
-    </header>
+    <div>
 
-    <?php
+<?php
     $args = array(
         'post_type' => 'rmf-workshop',
 
@@ -69,7 +71,9 @@ get_header();
         wp_reset_postdata();
     }
     ?>
-</main>
+    </div>
 </div>
+</main>
+
 <?php
 get_footer();
