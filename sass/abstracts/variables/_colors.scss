@@ -1,20 +1,94 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+// Custom RMF Colours
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$offWhite: #FDEDDF;
+$offWhite-75: rgba(253, 237, 223, 0.75);
+$offWhite-50: rgba(253, 237, 223, 0.5);
+$offWhite-25: rgba(253, 237, 223, 0.25);
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$orange: #E46C43;
+$orange-75: rgb(228, 108, 67, 0.75);
+$orange-50: rgb(228, 108, 67, 0.5);
+$orange-25: rgb(228, 108, 67, 0.25);
+
+$lightOrange: #FDAF94;
+$lightOrange-75: rgb(253, 175, 148, 0.75);
+$lightOrange-50: rgb(253, 175, 148, 0.5);
+$lightOrange-25: rgb(253, 175, 148, 0.25);
+
+$brown: #472e24;
+$brown-75: rgb(71, 46, 36, 0.75);
+$brown-50: rgb(71, 46, 36, 0.5);
+$brown-25: rgb(71, 46, 36, 0.25);
+
+$darkGreen: #2A6548;
+$darkGreen-75: rgba(42, 101, 72, 0.75);
+$darkGreen-50: rgba(42, 101, 72, 0.5);
+$darkGreen-25: rgba(42, 101, 72, 0.25);
+
+$mediumGreen: #598A7E;
+$mediumGreen-75: rgba(89, 138, 126, 0.75);
+$mediumGreen-50: rgba(89, 138, 126, 0.5);
+$mediumGreen-25: rgba(89, 138, 126, 0.25);
+
+$lightGreen: #79afa1;
+$lightGreen-75: rgba(121, 175, 161, 0.75);
+$lightGreen-50: rgba(121, 175, 161, 0.5);
+$lightGreen-25: rgba(8121, 175, 161, 0.25);
+
+$darkBlue: #337582;
+$darkBlue-75: rgba(51, 117, 130, 0.75);
+$darkBlue-50: rgba(51, 117, 130, 0.5);
+$darkBlue-25: rgba(851, 117, 130, 0.25);
+
+$mediumBlue: #6e9fa8;
+$mediumBlue-75: rgba(110, 159, 168, 0.75);
+$mediumBlue-50: rgba(110, 159, 168, 0.5);
+$mediumBlue-25: rgba(110, 159, 168, 0.25);
+
+$skyBlue: #7FBEC2;
+$skyBlue-75: rgb(127, 190, 194, 0.75);
+$skyBlue-50: rgb(127, 190, 194, 0.5);
+$skyBlue-25: rgb(127, 190, 194, 0.25);
+
+$lightBlue: #d3e6ef;
+$lightBlue-75: rgb(211, 230, 239, 0.75);
+$lightBlue-50: rgb(211, 230, 239, 0.5);
+$lightBlue-25: rgb(211, 230, 239, 0.25);
+
+$white: #fff;  
+$white-75: rgba(255, 255, 255, 0.75);
+$white-50: rgba(255, 255, 255, 0.5);
+$white-25: rgba(255, 255, 255, 0.25);
+
+$black: #000;
+$black-75: rgba(0, 0, 0, 0.75);
+$black-50: rgba(0, 0, 0, 0.5);
+$black-25: rgba(0, 0, 0, 0.25);
+
+$grey: #79787d;
+$grey-75: rgb(121, 120, 125, 0.75);
+$grey-50: rgb(121, 120, 125, 0.5);
+$grey-25: rgb(121, 120, 125, 0.25);
+
+// Original Theme Colour Variables
+
+$color__background-body: $offWhite;
+$color__background-screen: $offWhite;
+$color__background-hr: $offWhite;
+$color__background-button: $offWhite;
+$color__background-pre: $offWhite;
+$color__background-ins: $offWhite;
+
+$color__text-screen: $darkBlue;
+$color__text-input: $mediumGreen;
+$color__text-input-focus: $mediumGreen;
+$color__link: $darkBlue;
+$color__link-visited: $darkBlue;
+$color__link-hover: $orange; 
+$color__text-main: $darkBlue;
+
+$color__border-button: $offWhite;
+$color__border-button-hover: $offWhite;
+$color__border-button-focus: $offWhite;
+$color__border-input: $offWhite;
+$color__border-abbr: $grey;

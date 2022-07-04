@@ -5,4 +5,39 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: $font_headers;
+}
+
+h1 {
+	font-size: 2.5em;
+	color: $darkBlue;
+}
+
+h2 {
+	font-size: 2em;
+	color: $darkGreen;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: $mediumGreen;
+}
+
+h4 {
+	font-size: 1em;
+	color: $mediumBlue;
+}
+
+h5 {
+	font-size: 2.5em;
+	font-family: $font__main;
+	font-weight: 600;
+	color: $darkBlue;
+}
+
+h5 {
+	font-size: 2em;
+	font-family: $font__main;
+	font-weight: 600;
+	color: $mediumBlue;
 }
