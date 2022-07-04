@@ -265,7 +265,7 @@ function rmf_colours_admin_color_scheme() {
 	//Rocky Mountain Fest 
 	wp_admin_css_color( 'rocky-mountain-fest-colours', __( 'Rocky Mountain Fest ' ),
 	  $theme_dir . '/rmf-colours.css',
-	  array( '#598a7e', '#fdeddf', '#d54e21' , '#6e9fa8')
+	  array( '#337582', '#fdeddf', '#d54e21' , '#6e9fa8')
 	);
   }
   add_action('admin_init', 'rmf_colours_admin_color_scheme');
