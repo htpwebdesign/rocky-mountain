@@ -16,7 +16,7 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				post_type_archive_title( '<h1>', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -45,7 +45,6 @@ get_header();
 		?>
 
         <section>
-			<h2>FAQ</h2>
             <div>
                 <p>Sort content goes here. Filter by taxonomy (general, admission, camping, etc)</p>
             </div>
