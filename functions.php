@@ -123,6 +123,10 @@ add_action( 'after_setup_theme', 'rocky_mountain_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function rocky_mountain_scripts() {
+	wp_enqueue_style(
+		'rmf-google-fonts', 'https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Slackey&display=swap', array(), null, 'all',
+	);
+
 	wp_enqueue_style( 'rocky-mountain-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'rocky-mountain-style', 'rtl', 'replace' );
 
