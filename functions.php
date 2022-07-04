@@ -257,3 +257,16 @@ function isotope_faq_classes($id){
 	}
 	return $classes;
 }
+
+function rmf_colours_admin_color_scheme() {
+	//Get the theme directory
+	$theme_dir = get_stylesheet_directory_uri();
+  
+	//Rocky Mountain Fest 
+	wp_admin_css_color( 'rocky-mountain-fest-colours', __( 'Rocky Mountain Fest ' ),
+	  $theme_dir . '/rmf-colours.css',
+	  array( '#598a7e', '#fdeddf', '#d54e21' , '#6e9fa8')
+	);
+  }
+  add_action('admin_init', 'rmf_colours_admin_color_scheme');
+  
