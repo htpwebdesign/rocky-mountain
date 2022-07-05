@@ -21,45 +21,49 @@ get_header();
             the_post();
 		?>
         <h1><?php echo the_title(); ?></h1>
-        <section>
-            <?php
-            if( have_rows('topic') ):
+        <div class='health-safety-wrapper'>
+            <section>
+                <?php
+                if( have_rows('topic') ):
+                    // Loop through rows.
+                    while( have_rows('topic') ) : the_row();
+                        ?>
+                        <article>
+                        <h2><?php the_sub_field('section_title'); ?></h2>
+                            <div class='health-safety-content'>
+                                <?php $image= get_sub_field('image');
+                                    if ($image) {
+                                        echo wp_get_attachment_image( $image['id'], 'large');
+                                    }
+                                ?>
+                            <p><?php the_sub_field('description'); ?></p>
+
+                            </div>
+                        </article>
+                        <?php
+                    // End loop.
+                    endwhile;
+                endif;
+            ?>
+            </section>
+            <section class='banned-items'>
+                <h2><?php the_field('section_title'); ?></h2>
+                <ul>
+                <?php 
+                if( have_rows('banned_item') ):
                 // Loop through rows.
-                while( have_rows('topic') ) : the_row();
+                    while( have_rows('banned_item') ) : the_row();
                     ?>
-                    <article>
-                    <h2><?php the_sub_field('section_title'); ?></h2>
-                    <p><?php the_sub_field('description'); ?></p>
-                    <?php $image= get_sub_field('image');
-                        if ($image) {
-                            echo wp_get_attachment_image( $image['id'], 'large');
-                        }
-                    ?>
-                    </article>
+                    <li><?php the_sub_field('item_name') ?></li>
                     <?php
                 // End loop.
-                endwhile;
-            endif;
-        ?>
-        </section>
-        <section>
-            <h2><?php the_field('section_title'); ?></h2>
-            <ul>
-            <?php 
-            if( have_rows('banned_item') ):
-            // Loop through rows.
-                while( have_rows('banned_item') ) : the_row();
+                    endwhile;
+                endif;
                 ?>
-                <li><?php the_sub_field('item_name') ?></li>
-                <?php
-            // End loop.
-                endwhile;
-            endif;
-            ?>
-            </ul>
-            <?php  endwhile; // End of the loop. ?>
-        </section>
-
+                </ul>
+                <?php  endwhile; // End of the loop. ?>
+            </section>
+        </div>
 	</main><!-- #main -->
 
 <?php
