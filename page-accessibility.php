@@ -16,6 +16,7 @@ get_header();
 ?>
 	<main id="primary" class="site-main">
 		<h1><?php the_title();?></h1>
+		<div class='accessibility-wrapper'>
 		<?php
 		while ( have_posts() ) :
 			
@@ -27,18 +28,21 @@ get_header();
 					$image= get_sub_field('image');
 					// Load sub field value.
 					?>
-					<section>
+					<section class='access-topic'>
 						<h2><?php the_sub_field('section_title'); ?></h2>
-						<?php the_sub_field('content');
-							if ($image) {
-								echo wp_get_attachment_image( $image['id'], 'large');
-							};?>
+						<div class='access-content'>
+						<?php 							
+						if ($image) {
+							echo wp_get_attachment_image( $image['id'], 'large');
+						};
+						the_sub_field('content');?>
 					</section>
 					<?php
 				// End loop.
 				endwhile;
 			endif;
 		endwhile; // End of the loop.?>
+		</div>
 	</main><!-- #main -->
 
 <?php
