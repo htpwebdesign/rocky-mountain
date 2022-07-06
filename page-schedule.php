@@ -26,8 +26,8 @@ get_header();
             <p><?php the_field('description'); ?></p>
         </section>
 
-        <section>
-            <h2>Musical Line Up</h2>
+        <section class='schedule-type'>
+                <h2>Musical Line Up</h2>
             <?php
             $date_now = date('2022-07-29');
             $args = array(
@@ -40,8 +40,7 @@ get_header();
                 $query = new WP_Query( $args );
             ?>
             <section>
-            
-            <button class="accordion"><h3>Day 1</h3></button>
+            <button class="accordion"><h3 class='accordion-title'>Day 1</h3></button>
             <div class="panel">
             <?php
             if ( $query -> have_posts() ){
@@ -51,10 +50,10 @@ get_header();
                     //Day 1 Schedule
                     if (get_field('day') == "Day 1"): 
                     ?>
-                    <article>
+                    <article class='schedule-item'>
                         <h4><?php the_title(); ?></h4>
-                        <p><?php the_field('location'); ?></p>
-                        <p> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
+                        <p><?php the_field('location'); ?>:
+                        <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
                     </article>
                     <?php
                     endif;
@@ -62,9 +61,8 @@ get_header();
             }}
             ?>
             </section>
-            </section>
             <section>
-            <button class="accordion"><h3>Day 2</h3></button>
+            <button class="accordion"><h3 class='accordion-title'>Day 2</h3></button>
             <div class="panel">
             <?php
             if ( $query -> have_posts() ){
@@ -74,19 +72,20 @@ get_header();
                     //Day 2 Schedule
                     if (get_field('day') == "Day 2"): 
                     ?>
-                    <article>
+                    <article class='schedule-item'>
                         <h4><?php the_title(); ?></h4>
-                        <p><?php the_field('location'); ?></p>
-                        <p> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
+                        <p><?php the_field('location'); ?>:
+                        <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
                     </article>
                     <?php
                     endif;
                 endforeach;
             }}
             ?>
+            </section>
             </div>
             
-            <section>
+            <section class='schedule-type '>
             <h2>Workshops</h2>
             <?php
             $date_now = date('2022-07-29');
@@ -99,6 +98,7 @@ get_header();
                 );
                 $query = new WP_Query( $args );
             ?>
+            <section>
             <button class="accordion"><h3>Day 1</h3></button>
             <div class="panel">
             <?php
@@ -110,10 +110,10 @@ get_header();
                         //Day 1 Schedule
                         if (get_field('workshop_day') == "Saturday"): 
                         ?>
-                        <article>
+                        <article class='schedule-item'>
                             <h4><?php the_title(); ?></h4>
-                            <p><?php the_field('workshop_location'); ?></p>
-                            <p> <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
+                            <p><?php the_field('workshop_location'); ?>:
+                             <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
                         </article>
                         <?php
                         endif;
@@ -133,10 +133,10 @@ get_header();
                         //Day 2 Schedule
                         if (get_field('workshop_day') == "Sunday"): 
                         ?>
-                        <article>
+                        <article class='schedule-item'>
                             <h4><?php the_title(); ?></h4>
-                            <p><?php the_field('location'); ?></p>
-                            <p> <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
+                            <p><?php the_field('workshop_location'); ?>:
+                            <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
                         </article>
                         <?php
                         endif;
@@ -145,6 +145,7 @@ get_header();
             ?>
             </div>
             </section>
+        </section>
 
 
 		<?php endwhile; // End of the loop.?>
