@@ -1,0 +1,105 @@
+// Schedule Page
+.page-id-15 {
+  .schedule-type {
+    background-color: $offWhite;
+    border-top: 3px solid $mediumGreen;
+    border-bottom: 3px solid $mediumGreen;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
+      background-color: $mediumGreen;
+      color: $offWhite;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      text-align: center;
+    }
+    section {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: unset;
+      background-image: url("images/accordion.svg");
+      background-repeat: no-repeat;
+      .panel {
+        width: 100%;
+      }
+    }
+    button {
+      max-width: 10rem;
+      margin: 0 auto;
+    }
+    .accordion-fold {
+      background-image: url("../../../images/accordion.svg");
+    }
+
+    @media (min-width: 33.75rem) {
+      width: 90%;
+      border-radius: 27px;
+      border: 3px solid $mediumGreen;
+    }
+  }
+  .schedule-item {
+    width: 80%;
+    font-family: $font__main;
+    border-bottom: 2px solid $darkBlue;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    h4 {
+      font-family: $font__main;
+    }
+  }
+}
+svg {
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 35%));
+}
+// Accommodations Page
+.camping,
+.alt-accom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .accordion {
+    max-width: 30rem;
+  }
+  .panel {
+    width: 80%;
+    max-width: 54rem;
+    margin: 2rem;
+  }
+}
+.hotel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+  border-radius: 27px;
+  margin: 1rem auto;
+  max-width: 42.5rem;
+  padding: 1rem;
+  div {
+    text-align: center;
+  }
+  .hotel-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    & > * {
+      margin: 1rem;
+    }
+  }
+  @media (min-width: 32.5rem) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+figure {
+  max-width: 15rem;
+}
