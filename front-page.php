@@ -139,21 +139,81 @@ get_header();
 					$title = $row['content_title'];
 					$subtitle = $row['content_subtitle'];
 					$excerpt = $row['content_excerpt'];
-					$link = $row['content_page_pink'];
+					$link = $row['content_page_link'];
 					$image = $row['content_image'];
 
-					echo wpautop( $title );
-					echo wpautop( $subtitle );
-					echo wpautop( $excerpt );
-					echo wpautop( $link );
+					?>
+					<article>
+					<div id="home-card-cta-text">
+						<?php
+						echo '<h3>'. $title .'</h3>';
+						echo '<h4>'. $subtitle .'</h4>';
+						echo '<p>'. $excerpt .'</p>';
+						// echo $link;
+						// echo wpautop( $image );
+						?>
+						<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+					</div>
+					<?php
+					if ($image) {
+						echo wp_get_attachment_image( $image['id'], 'large');
+					}
+					?>
+					</article>
+					<?php
+				}
+				}
+			}
+			?>
+			</section>
+
+			<section class="home-vendor">
+				<!-- ACF -->
+			<?php 
+			// check to make sure the ACF plugin exists
+			if (function_exists ('get_field')) {
+			
+				$rows = get_field('home_page_vendor');
+				if( $rows ) {
+
+					foreach( $rows as $row ) {
+					$title = $row['content_title'];
+					$subtitle = $row['content_subtitle'];
+					$excerpt = $row['content_excerpt'];
+					$link = $row['content_page_link'];
+					$link_secondary = $row['content_page_link_secondary'];
+
+					$image = $row['content_image'];
+
+					?>
+					<article>
+					<article id="vendor-content-wrapper">
+						<div id="vendor-text">
+						<?php
+						echo '<h3>'. $title .'</h3>';
+						echo '<h4>'. $subtitle .'</h4>';
+						echo '<p>'. $excerpt .'</p>';
+						?>
+						</div>
+					<?php
+					// echo $link;
+					// echo $link_secondary;
 					// echo wpautop( $image );
 					?>
-					<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+					<div id="vendor-image">
+						<?php
+						if ($image) {
+							echo wp_get_attachment_image( $image['id'], 'large');
+						}
+						?>
+					</div>
+					</article>
+					<nav id="vendor-ctas-wrapper">
+						<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+						<a href='<?php echo $link_secondary ?>'> <?php echo $title ?> Sign-up ></a>
+					</nav>
+					</article>
 					<?php
-
-					if( $image ): ?>
-						<img class="home-content-link-image" src="<?php echo $image['url']; ?>" alt="<?php echo $title ; ?>" />
-					<?php endif;
 				}
 				}
 			}
