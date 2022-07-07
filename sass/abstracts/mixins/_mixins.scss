@@ -7,6 +7,12 @@
 
 // Column width with margin
 // @mixin column-width($numberColumns: 3) {
+
+// 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+// }
+
+
+
 //   width: map-get($columns, $numberColumns) -
 //     (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 // }
@@ -24,3 +30,28 @@
     border: 3px solid $offWhite;
   }
 }
+
+
+
+// Media Queries
+@mixin mq($w){
+    @media(min-width: ($w)){
+        @content;
+    }
+}
+
+// Use it like so:
+// Insert the variable of your screen size choice
+// @include mq($tablet){
+// 	// margin-bottom: 0;
+// }
+
+// Breakpoints
+// 600px
+$tablet: 37.5rem;
+// 800 px
+$tabletWide: 50rem;
+// 1000px
+$desktop: 62.5rem;
+// 1000px
+$desktopWide: 93.75rem;
