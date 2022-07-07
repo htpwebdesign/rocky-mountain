@@ -1,11 +1,26 @@
 // Center block
 @mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Column width with margin
 // @mixin column-width($numberColumns: 3) {
-// 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+//   width: map-get($columns, $numberColumns) -
+//     (($columns__margin * ($numberColumns - 1)) / $numberColumns);
 // }
+
+@mixin content-block($background-color) {
+  background-color: $background-color;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+  max-width: 42.5rem;
+  color: $offWhite;
+  @media (min-width: 33.75rem) {
+    margin: 1rem auto;
+    width: 80%;
+    border-radius: 27px;
+    border: 3px solid $offWhite;
+  }
+}

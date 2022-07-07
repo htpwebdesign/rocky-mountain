@@ -16,22 +16,18 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 		</header>
-
-		<p><?php the_field('process_description') ?></p>
-			
-		<div class="sign-up-form">
-			<?php echo do_shortcode('[contact-form-7 id="359" title="Vendor Sign-Up"]') ?>
+		<div class='content-wrapper'>
+				<p><?php the_field('process_description') ?></p>
+		
+				<div class="sign-up-form">
+					<?php echo do_shortcode('[contact-form-7 id="359" title="Vendor Sign-Up"]') ?>
+				</div>
 		</div>
 
-		</article>
 			
 		<?php endwhile; // End of the loop. ?>
 
