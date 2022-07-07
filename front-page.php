@@ -97,7 +97,8 @@ get_header();
 				if ( $query->have_posts() ) {
 					while( $query->have_posts() ) {
 						$query->the_post();
-						echo '<article>';
+						echo '<article class="artist-card">';
+						echo '<div class="artist-text-wrapper">';
 							echo '<h2>'. get_the_title() .'</h2>';
 							echo '<p>'. get_field('band_description') .'</p>';
 
@@ -114,12 +115,13 @@ get_header();
 							}
 							// the_content();
 							// ECHO OUT THE SPECIALITY
-						echo '</article>';
+						echo '</div>';
 
 						echo '<figure>';
 						//  insert image
 							the_post_thumbnail('medium_large');
 						echo '</figure>';
+						echo '</article>';
 					}
 					wp_reset_postdata();
 				} 
