@@ -159,7 +159,7 @@ get_header();
 			}
 			?>
 			</section>
-
+			<section class="home-news">
 			<h2>News  </h2>
 			<?php 
 				$args = array( 
@@ -177,6 +177,7 @@ get_header();
 						?>
 						
 						<article>
+							<h3><?php the_title(); ?></h3>
 							<a href="
 								<?php the_permalink(); ?>">
 							<?php
@@ -187,8 +188,8 @@ get_header();
 							?>
 							</a>
 							<!-- removed the alink here and instead wrapped the block -->
-								<h3><?php the_title(); ?></h3>
-								<p><?php the_excerpt(); ?></p>
+								
+								<?php the_excerpt(); ?>
 								<a href="<?php the_permalink(); ?>">Read More ></a>
 							
 						</article>
