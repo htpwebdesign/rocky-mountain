@@ -1,9 +1,9 @@
 // Schedule Page
 .page-id-15 {
   .schedule-type {
-    background-color: $offWhite;
-    border-top: 3px solid $mediumGreen;
-    border-bottom: 3px solid $mediumGreen;
+    background-color: $mediumGreen;
+    border-top: 3px solid $offWhite;
+    border-bottom: 3px solid $offWhite;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     margin: 1rem auto;
@@ -12,7 +12,7 @@
     align-items: center;
     h2 {
       clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
-      background-color: $mediumGreen;
+      background-color: $darkBlue;
       color: $offWhite;
       padding: 0.5rem 1rem;
       margin: 0.5rem;
@@ -24,8 +24,9 @@
       flex-direction: column;
       align-items: center;
       background-color: unset;
-      background-image: url("images/accordion.svg");
-      background-repeat: no-repeat;
+      background-image: url("images/accordion2.svg");
+      background-repeat: repeat;
+      background-size: 100%;
       .panel {
         width: 100%;
       }
@@ -41,7 +42,7 @@
     @media (min-width: 33.75rem) {
       width: 90%;
       border-radius: 27px;
-      border: 3px solid $mediumGreen;
+      border: 3px solid $offWhite;
     }
   }
   .schedule-item {
@@ -102,4 +103,67 @@ svg {
 }
 figure {
   max-width: 15rem;
+}
+
+// Privacy Policy
+.page-id-3,
+.page-id-154 {
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 42.5rem;
+    background-color: $mediumGreen;
+    border-top: 3px solid $offWhite;
+    border-bottom: 3px solid $offWhite;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    color: $offWhite;
+    h2 {
+      color: $offWhite;
+      background-color: $darkBlue;
+      padding: 0.5rem 1.5rem;
+      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+      text-align: center;
+      margin: 1rem;
+    }
+    p {
+      padding: 0 1rem;
+    }
+    @media (min-width: 33.75rem) {
+      margin: 1rem auto;
+      width: 80%;
+      border-radius: 27px;
+      border: 3px solid $offWhite;
+      h2 {
+        clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
+      }
+    }
+  }
+}
+// Map Page
+.page-id-26 {
+  .map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 27px;
+    background-color: $mediumGreen;
+    border-top: 3px solid $offWhite;
+    border-bottom: 3px solid $offWhite;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    max-width: 42.5rem;
+    p {
+      margin: 1rem;
+      color: $offWhite;
+    }
+    @media (min-width: 33.75rem) {
+      margin: 1rem auto;
+      width: 80%;
+      border-radius: 27px;
+      border: 3px solid $offWhite;
+    }
+  }
 }

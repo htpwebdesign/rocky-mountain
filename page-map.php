@@ -23,7 +23,7 @@ get_header();
             
 		?>
         <h1><?php the_title();?></h1>
-        <section>
+        <section class='map'>
             <p><?php the_field('map_description') ?></p>
             
             <?php 
