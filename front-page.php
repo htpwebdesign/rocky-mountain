@@ -52,7 +52,7 @@ get_header();
 			<?php endif; 
 			} ?>
 
-					<article>
+					<article id="home-promo-links-wrapper">
 						<?php
 						// check to make sure the ACF plugin exists
 						if (function_exists ('get_field')) {
@@ -60,7 +60,7 @@ get_header();
 						if( get_field('home_page_promo_links') ): 
 							$home_promo_links = get_field('home_page_promo_links'); 
 											?>
-							<nav id="home-promo-links-wrapper">
+							<nav id="home-promo-links-nav">
 								<ul>
 									<li><a href="<?php echo esc_url($home_promo_links['promo_link_1']['url']); ?>">
 									<?php echo esc_html( $home_promo_links['promo_link_1']['title'] ); ?></a></li>
