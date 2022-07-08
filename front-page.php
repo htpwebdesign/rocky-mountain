@@ -17,7 +17,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			// get_template_part( 'template-parts/content', 'page' );
 			?>
 
 			<section class="home-hero">
@@ -28,10 +28,14 @@ get_header();
 			if( get_field('home_page_hero') ): 
 				$hero = get_field('home_page_hero'); 
 								?>
-				<div id="hero">
+				<div id="home-hero-wrapper">
+					
 					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
-					<article class="content">
-						<h1><?php echo $hero['hero_title']; ?></h1>
+					<article class="hero-banner-content">
+						<?php 
+						get_template_part( 'template-parts/content', 'page' );
+
+						?>
 						<h4><?php echo $hero['hero_subtitle']; ?></h4>
 			
 						<div>
@@ -48,7 +52,7 @@ get_header();
 			<?php endif; 
 			} ?>
 
-					<article>
+					<article id="home-promo-links-wrapper">
 						<?php
 						// check to make sure the ACF plugin exists
 						if (function_exists ('get_field')) {
@@ -56,7 +60,7 @@ get_header();
 						if( get_field('home_page_promo_links') ): 
 							$home_promo_links = get_field('home_page_promo_links'); 
 											?>
-							<nav id="home-promo-links-wrapper">
+							<nav id="home-promo-links-nav">
 								<ul>
 									<li><a href="<?php echo esc_url($home_promo_links['promo_link_1']['url']); ?>">
 									<?php echo esc_html( $home_promo_links['promo_link_1']['title'] ); ?></a></li>
@@ -238,7 +242,7 @@ get_header();
 						// grab the title and link to the post
 						?>
 						
-						<article>
+						<article class="news-article">
 							<h3><?php the_title(); ?></h3>
 							<a href="
 								<?php the_permalink(); ?>">
