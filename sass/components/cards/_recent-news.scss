@@ -28,14 +28,17 @@
     }
 
 
+}
 
-// Design and Styles
-    article {
+.news-article {
+    
         background-color: white;
         border: 2px solid $darkBlue;
         position: relative;
         margin-bottom: 2rem;
-    }
+
+        // Design and Styles
+   
 
     h3 {
         font-size: 1.25rem;
@@ -66,4 +69,5 @@
         text-align: center;
         color: white;
     }
+    
 }
