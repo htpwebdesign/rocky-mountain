@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 	<main id="primary" class="site-main">
@@ -22,7 +23,6 @@ get_header();
             the_post();
             
 		?>
-        <h1><?php the_title();?></h1>
         <section class='map'>
             <p><?php the_field('map_description') ?></p>
             

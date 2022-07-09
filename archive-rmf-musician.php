@@ -8,6 +8,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
     <div class="button-group filter-button-group">
         <button data-filter="*">Show All</button>

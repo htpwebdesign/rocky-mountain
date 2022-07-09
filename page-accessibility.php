@@ -13,9 +13,10 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 	<main id="primary" class="site-main">
-		<h1><?php the_title();?></h1>
+
 		<div class='accessibility-wrapper'>
 		<?php
 		while ( have_posts() ) :
