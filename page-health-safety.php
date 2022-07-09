@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 	<main id="primary" class="site-main">
@@ -20,7 +21,6 @@ get_header();
 		while ( have_posts() ) : 
             the_post();
 		?>
-        <h1><?php echo the_title(); ?></h1>
         <div class='health-safety-wrapper'>
             <section>
                 <?php

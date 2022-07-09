@@ -9,6 +9,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 				
@@ -16,7 +17,7 @@ get_header();
 		
 		<?php while ( have_posts() ) : the_post(); ?>
 			<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 			</header>
 			<div class="content-wrapper">
 				<div class="entry-content">

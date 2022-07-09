@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 	<main id="primary" class="site-main">
@@ -26,10 +27,6 @@ get_header();
                 <!-- // why is this not working? -->
 				<header>
                     <h1 class="page-title screen-reader-text"><?php the_title();?></h1>
-				</header>
-
-                <header>
-                    <h1 class="page-title screen-reader-text">News & Announcements</h1>
 				</header>
 				<?php
 			endif;

@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 	<main id="primary" class="site-main">

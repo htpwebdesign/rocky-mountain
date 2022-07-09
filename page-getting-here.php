@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_template_part('template-parts/content-banner');
 ?>
 
 	<main id="primary" class="site-main">
@@ -20,7 +21,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
             ?>
-            <h1><?php the_title();?></h1>
             <div class='get-here-wrapper'>
                 <section>
                     <p><?php the_field('getting_here_description') ?></p>
