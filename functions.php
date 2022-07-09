@@ -270,3 +270,5 @@ function rmf_colours_admin_color_scheme() {
   }
   add_action('admin_init', 'rmf_colours_admin_color_scheme');
   
+  // Add submenu functionality for mobile
+  require get_template_directory() . '/inc/submenus.php';
