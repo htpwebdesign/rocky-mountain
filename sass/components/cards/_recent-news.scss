@@ -1,0 +1,73 @@
+// Layout 
+.home-news {
+    display: grid;
+    // grid-template-columns: repeat(1, 50%);
+    gap: 1rem;
+    padding: 4rem 2rem;
+    justify-content: center;
+
+    h2 {
+        // grid-column: span 2;
+        text-align: center;
+      }
+
+    @include mq($tablet) {
+        grid-template-columns: repeat(2, 50%);
+        h2 {
+            grid-column: span 2;
+        }
+    }
+
+    @include mq($desktop) {
+        grid-template-columns: repeat(4, 22.5%);
+
+        h2 {
+            grid-column: span 4;
+        }
+
+    }
+
+
+}
+
+.news-article {
+    
+        background-color: white;
+        border: 2px solid $darkBlue;
+        position: relative;
+        margin-bottom: 2rem;
+
+        // Design and Styles
+   
+
+    h3 {
+        font-size: 1.25rem;
+        background-color: $darkBlue;
+        padding: 1rem 0.5rem;
+        text-align: center;
+        color: $offWhite;
+        margin: 0px;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    p {
+        padding: 0 1rem 2rem;
+        margin-top: 0.5rem;
+    }
+
+    a:last-of-type {
+        position: absolute;
+        bottom: -4%;
+        right: 5%;
+        left: 5%;
+        padding: 0.5rem 1rem;
+        background-color: orange;
+        text-align: center;
+        color: white;
+    }
+    
+}

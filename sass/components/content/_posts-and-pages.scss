@@ -28,3 +28,40 @@
 	position: relative;
 	z-index: 100000;
 }
+
+//  Top Level News Page
+
+
+.main-news-section {
+	 display: grid;
+	 grid-template-columns: repeat(1, 100%);
+	 gap: 1rem;
+	 justify-content: center;
+
+	//  header {
+	// 	grid-column: span 2;
+	//  }
+
+	 @include mq($tablet){
+		grid-template-columns: repeat(2, 50%);
+	}
+
+	@include mq($desktop){
+		grid-template-columns: repeat(4, 25%);
+
+		// header {
+		// 	grid-column: span 4;
+		//  }
+	}
+
+	@include mq($desktopWide){
+		grid-template-columns: repeat(6, 15%);
+
+		// header {
+		// 	grid-column: span 6;
+		//  }
+	}
+	
+}
+
+//  Individual News Pages

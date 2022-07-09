@@ -17,7 +17,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			// get_template_part( 'template-parts/content', 'page' );
 			?>
 
 			<section class="home-hero">
@@ -28,10 +28,14 @@ get_header();
 			if( get_field('home_page_hero') ): 
 				$hero = get_field('home_page_hero'); 
 								?>
-				<div id="hero">
+				<div id="home-hero-wrapper">
+					
 					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
-					<article class="content">
-						<h1><?php echo $hero['hero_title']; ?></h1>
+					<article class="hero-banner-content">
+						<?php 
+						get_template_part( 'template-parts/content', 'page' );
+
+						?>
 						<h4><?php echo $hero['hero_subtitle']; ?></h4>
 			
 						<div>
@@ -48,7 +52,7 @@ get_header();
 			<?php endif; 
 			} ?>
 
-					<article>
+					<article id="home-promo-links-wrapper">
 						<?php
 						// check to make sure the ACF plugin exists
 						if (function_exists ('get_field')) {
@@ -56,7 +60,7 @@ get_header();
 						if( get_field('home_page_promo_links') ): 
 							$home_promo_links = get_field('home_page_promo_links'); 
 											?>
-							<nav id="home-promo-links-wrapper">
+							<nav id="home-promo-links-nav">
 								<ul>
 									<li><a href="<?php echo esc_url($home_promo_links['promo_link_1']['url']); ?>">
 									<?php echo esc_html( $home_promo_links['promo_link_1']['title'] ); ?></a></li>
@@ -97,7 +101,8 @@ get_header();
 				if ( $query->have_posts() ) {
 					while( $query->have_posts() ) {
 						$query->the_post();
-						echo '<article>';
+						echo '<article class="artist-card">';
+						echo '<div class="artist-text-wrapper">';
 							echo '<h2>'. get_the_title() .'</h2>';
 							echo '<p>'. get_field('band_description') .'</p>';
 
@@ -114,12 +119,13 @@ get_header();
 							}
 							// the_content();
 							// ECHO OUT THE SPECIALITY
-						echo '</article>';
+						echo '</div>';
 
 						echo '<figure>';
 						//  insert image
 							the_post_thumbnail('medium_large');
 						echo '</figure>';
+						echo '</article>';
 					}
 					wp_reset_postdata();
 				} 
@@ -139,27 +145,87 @@ get_header();
 					$title = $row['content_title'];
 					$subtitle = $row['content_subtitle'];
 					$excerpt = $row['content_excerpt'];
-					$link = $row['content_page_pink'];
+					$link = $row['content_page_link'];
 					$image = $row['content_image'];
 
-					echo wpautop( $title );
-					echo wpautop( $subtitle );
-					echo wpautop( $excerpt );
-					echo wpautop( $link );
-					// echo wpautop( $image );
 					?>
-					<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+					<article>
+					<div id="home-card-cta-text">
+						<?php
+						echo '<h3>'. $title .'</h3>';
+						echo '<h4>'. $subtitle .'</h4>';
+						echo '<p>'. $excerpt .'</p>';
+						// echo $link;
+						// echo wpautop( $image );
+						?>
+						<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+					</div>
 					<?php
-
-					if( $image ): ?>
-						<img class="home-content-link-image" src="<?php echo $image['url']; ?>" alt="<?php echo $title ; ?>" />
-					<?php endif;
+					if ($image) {
+						echo wp_get_attachment_image( $image['id'], 'large');
+					}
+					?>
+					</article>
+					<?php
 				}
 				}
 			}
 			?>
 			</section>
 
+			<section class="home-vendor">
+				<!-- ACF -->
+			<?php 
+			// check to make sure the ACF plugin exists
+			if (function_exists ('get_field')) {
+			
+				$rows = get_field('home_page_vendor');
+				if( $rows ) {
+
+					foreach( $rows as $row ) {
+					$title = $row['content_title'];
+					$subtitle = $row['content_subtitle'];
+					$excerpt = $row['content_excerpt'];
+					$link = $row['content_page_link'];
+					$link_secondary = $row['content_page_link_secondary'];
+
+					$image = $row['content_image'];
+
+					?>
+					<article>
+					<article id="vendor-content-wrapper">
+						<div id="vendor-text">
+						<?php
+						echo '<h3>'. $title .'</h3>';
+						echo '<h4>'. $subtitle .'</h4>';
+						echo '<p>'. $excerpt .'</p>';
+						?>
+						</div>
+					<?php
+					// echo $link;
+					// echo $link_secondary;
+					// echo wpautop( $image );
+					?>
+					<div id="vendor-image">
+						<?php
+						if ($image) {
+							echo wp_get_attachment_image( $image['id'], 'large');
+						}
+						?>
+					</div>
+					</article>
+					<nav id="vendor-ctas-wrapper">
+						<a href='<?php echo $link ?>'>Go to <?php echo $title ?> Page ></a>
+						<a href='<?php echo $link_secondary ?>'> <?php echo $title ?> Sign-up ></a>
+					</nav>
+					</article>
+					<?php
+				}
+				}
+			}
+			?>
+			</section>
+			<section class="home-news">
 			<h2>News  </h2>
 			<?php 
 				$args = array( 
@@ -176,7 +242,8 @@ get_header();
 						// grab the title and link to the post
 						?>
 						
-						<article>
+						<article class="news-article">
+							<h3><?php the_title(); ?></h3>
 							<a href="
 								<?php the_permalink(); ?>">
 							<?php
@@ -187,8 +254,8 @@ get_header();
 							?>
 							</a>
 							<!-- removed the alink here and instead wrapped the block -->
-								<h3><?php the_title(); ?></h3>
-								<p><?php the_excerpt(); ?></p>
+								
+								<?php the_excerpt(); ?>
 								<a href="<?php the_permalink(); ?>">Read More ></a>
 							
 						</article>

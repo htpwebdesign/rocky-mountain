@@ -1,0 +1,37 @@
+.home-artists {
+
+    @include mq($tabletWide){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        article:first-of-type {
+            grid-column: span 2;
+        }
+    
+    }
+
+    @include mq($desktop){
+        grid-template-columns: 1fr 1fr 1fr;
+
+        article:first-of-type {
+            grid-column: span 1;
+        }
+    
+    }
+
+// .artist-card {
+
+// }
+
+// .artist-text-wrapper {
+
+// }
+
+// figure img {
+
+// }
+
+
+
+}

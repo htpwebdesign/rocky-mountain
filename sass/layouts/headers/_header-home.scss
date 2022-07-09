@@ -1,0 +1,24 @@
+#home-hero-wrapper {
+    position: relative;
+
+    .hero-banner-content {
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        left: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-direction: column;
+
+        .entry-title {
+            margin-bottom: 0px;
+        }
+
+        // @include mq($tablet){
+        //     top: 20%;
+        //     bottom: 20%;
+        // }
+    }
+}
