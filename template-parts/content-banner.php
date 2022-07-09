@@ -38,18 +38,17 @@
 	}
 	// h1 title for archive pages
 	if(is_post_type_archive()) {
-	$postType = get_queried_object();
-	if (esc_html($postType->labels->singular_name)=="Musician") {
-		echo "<h1>The Line-Up</h1>";
-	} 
-		if (esc_html($postType->labels->singular_name)=="Workshop") {
-		echo "<h1>Workshops</h1>";
-	} 
-		if (esc_html($postType->labels->singular_name)=="Vendor") {
-		echo "<h1>Vendors</h1>";
-	} else {
-		post_type_archive_title( '<h1>', '</h1>' );
-	}
+		$postType = get_queried_object();
+		if (esc_html($postType->labels->singular_name)=="Musician") {
+			echo "<h1>The Line-Up</h1>";
+		} 
+		else if (esc_html($postType->labels->singular_name)=="Workshop") {
+			echo "<h1>Workshops</h1>";
+		} else if (esc_html($postType->labels->singular_name)=="Vendor") {
+			echo "<h1>Vendors</h1>";
+		} else {
+			post_type_archive_title( '<h1>', '</h1>' );
+		}
 	}
 	?>
 </article>
