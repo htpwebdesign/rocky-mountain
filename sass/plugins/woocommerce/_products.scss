@@ -74,7 +74,8 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
     align-items: start;
   }
 }
-a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
+a.added_to_cart.wc-forward {
   padding: 0.5rem;
   border: 3px solid $darkBlue;
   border-radius: 27px;
