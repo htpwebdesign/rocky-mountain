@@ -12,6 +12,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		
 
 		<?php
 		while ( have_posts() ) :
@@ -48,10 +49,10 @@ get_header();
 
 					</article>
 				</div>
-				
+				</section>
 			<?php endif; 
 			} ?>
-
+				<div class="main-interior-wrapper">
 					<article id="home-promo-links-wrapper">
 						<?php
 						// check to make sure the ACF plugin exists
@@ -76,7 +77,7 @@ get_header();
 						} ?>
 					
 					</article>
-			</section>
+			
 
 			<section class="home-artists">
 				<!-- cpt pull 3 highlight artists wit their images -->
@@ -275,9 +276,9 @@ get_header();
 		<?php
 		endwhile; // End of the loop.
 		?>
-
+		</div>
 	</main><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
