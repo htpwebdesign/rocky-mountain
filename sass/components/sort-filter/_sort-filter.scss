@@ -1,0 +1,71 @@
+.filter-wrapper {
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    min-width: 270px;
+    max-width: 685px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.filter-button-group {
+    background: $offWhite;
+    width: inherit;
+    padding: 4.75em 2em 3em 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(2% 6%, 98% 15%, 95% 88%, 4% 93%);
+    -webkit-clip-path: polygon(2% 6%, 98% 15%, 95% 88%, 4% 93%);
+    z-index: 1;
+
+    button {
+        margin: .25em;
+        font-family: $font_headers;
+        font-size: .8em;
+        color: $mediumGreen;
+        background-color: $offWhite-25;
+        border: 2px solid $mediumGreen;
+        border-radius: 5em;
+        box-shadow: inset 2px 2px 0 0 $mediumGreen;
+        z-index: 3;
+    }
+
+    button:hover {
+        color: $darkGreen;
+        background-color: $offWhite;
+        box-shadow: inset -2px -2px 0 0 $darkGreen;
+        border-color: $darkGreen;
+        transform: scale(1.025);
+    }
+}
+
+.filter-button-group::before {
+    content: "Filter";
+    font-family: $font_headers;
+    text-align: center;
+    color: $offWhite;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding-top: 2.75em;
+    margin: 2;
+    position: absolute;
+    background: $lightGreen;
+    clip-path: polygon(2% 6%, 98% 15%, 95% 88%, 4% 93%);
+    -webkit-clip-path: polygon(2% 6%, 98% 15%, 95% 88%, 4% 93%);
+    z-index: 1;
+}
+
+.filter-wraper::after {
+    content: "Filter";
+    color: $offWhite;
+    text-align: center;
+}
+
+@media (min-width: 24.5625rem) {
+    .filter-button-group::before {
+        padding-top: 2.25em;
+    } 
+}
