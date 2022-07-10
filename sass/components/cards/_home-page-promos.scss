@@ -1,9 +1,16 @@
 #home-promo-links-wrapper {
 
+    //  @include mq($desktop){
+        position: absolute;
+        top: -1.5rem;
+        right: 0;
+        left: 0;
+    //  }
+
     #home-promo-links-nav {
         // background-color: $orange;
-        max-width: 60%;
-        margin: 0 auto;
+        max-width: 90%;
+        margin: 0rem auto;
 
         
         @include mq($tablet){
@@ -21,8 +28,8 @@
         ul {
 
         display: flex;
-        // grid-template-columns: repeat(3, 1fr);
-        flex-direction: column;
+        grid-template-columns: repeat(3, 30%);
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         align-content: center;
@@ -46,7 +53,7 @@
 
             a {
                 font-size: 1.25rem;
-                padding: 1.25rem 4rem;
+                padding: 1.25rem 2rem;
                 color: $offWhite;
                 text-decoration: none;
                 font-weight: 500;

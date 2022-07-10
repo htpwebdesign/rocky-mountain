@@ -1,9 +1,12 @@
 .home-artists {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
 
     @include mq($tabletWide){
-        display: grid;
+        // display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        // gap: 1rem;
 
         article:first-of-type {
             grid-column: span 2;
@@ -20,9 +23,11 @@
     
     }
 
-// .artist-card {
-
-// }
+.artist-card {
+    padding: 1rem 2rem;
+    background-color: $offWhite;
+    border: 2px solid $darkGreen;
+}
 
 // .artist-text-wrapper {
 
