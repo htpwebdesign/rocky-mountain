@@ -22,14 +22,14 @@ get_template_part('template-parts/content-banner');
 			the_post();
 		?>
 		<section class='camping'>
-			<button class="accordion"><h2><?php the_field('camping_title') ?></h2></button>
-			<div class="panel">
+			<h2><?php the_field('camping_title') ?></h2>
+			<div>
 				<p><?php the_field('camping_description') ?></p>
 			</div>
 		</section>
 		<section class='alt-accom'>
-			<button class="accordion"><h2><?php the_field('accomm_title') ?></h2></button>
-			<div class="panel">
+			<h2><?php the_field('accomm_title') ?></h2>
+			<div>
 				<p><?php the_field('accomm_description') ?></p>
 				<?php
 				if( have_rows('nearby_accomm') ):
