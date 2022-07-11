@@ -1,24 +1,43 @@
-#home-hero-wrapper {
+.home-hero {
     position: relative;
-
-    .hero-banner-content {
-        position: absolute;
-        top: 20%;
-        bottom: 20%;
-        left: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        align-content: flex-start;
-        flex-direction: column;
-
-        .entry-title {
-            margin-bottom: 0px;
-        }
-
-        // @include mq($tablet){
-        //     top: 20%;
-        //     bottom: 20%;
-        // }
+    background-color: $skyBlue;
+    width: 100%;
+    height: 600px;
+    img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        min-width: 900px;
+        min-height: 100%;
+        margin: 0 auto;
+        mix-blend-mode: screen;
     }
+}
+.home-hero::after {
+    content: '';
+    background: url('images/mountains-and-trees-green.svg') bottom center repeat-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -0.125rem;
+    // z-index: 1;
+}
+
+.hero-banner-content {
+    max-width: 900px;
+    position: absolute;
+    top: 11rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto 0 auto;
+}
+
+#home-promo-links-wrapper {
+    position: absolute;
+    top: 35rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 3;
 }
