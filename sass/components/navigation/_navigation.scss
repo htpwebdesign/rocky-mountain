@@ -88,6 +88,11 @@
 }
 
 #site-navigation {
+  margin-right: 1rem;
+  @media (min-width: 33.75rem) {
+    margin-right: unset;
+  }
+
   ul#primary-menu {
     background-color: $orange;
     flex-direction: column;
@@ -134,17 +139,23 @@
       }
     }
   }
-
   .menu-primary-navigation-container {
     position: absolute;
     top: 5rem;
     right: 2rem;
     @media (min-width: 37.5rem) {
       position: static;
+      margin-top: 1rem;
     }
   }
   svg.submenu-icon {
     height: 1rem;
+  }
+}
+.site-branding {
+  margin: 0 1rem;
+  @media (min-width: 33.75rem) {
+    margin: 0 0 0 0.5rem;
   }
 }
 

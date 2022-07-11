@@ -8,38 +8,28 @@
  * @package FWD_Starter_Theme
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<main id="primary" class="site-main">
-		
-
+	<main id="primary" class="site-main"> 
 		<?php
+		
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
 
-			// get_template_part( 'template-parts/content', 'page' );
-			?>
-
-			<section class="home-hero">
-			<?php
-			// check to make sure the ACF plugin exists
+			<section class="home-hero"> <?php
+			
 			if (function_exists ('get_field')) {
 			
 			if( get_field('home_page_hero') ): 
-				$hero = get_field('home_page_hero'); 
-								?>
-				<div id="home-hero-wrapper">
-					
-					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
-					<article class="hero-banner-content">
-						<?php 
-						get_template_part( 'template-parts/content', 'page' );
+				$hero = get_field('home_page_hero'); ?>
 
-						?>
+					<img src="<?php echo esc_url( $hero['hero_image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['hero_image']['alt'] ); ?>" />
+					<article class="hero-banner-content"> <?php 
+						 the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 						<h4><?php echo $hero['hero_subtitle']; ?></h4>
 			
-						<div>
+						<div class='hero-ctas'>
 							<a href="<?php echo esc_url($hero['hero_primary_cta']['url']); ?>">
 							<?php echo esc_html( $hero['hero_primary_cta']['title'] ); ?></a>
 
@@ -48,7 +38,6 @@ get_header();
 						</div>
 
 					</article>
-				</div>
 				</section>
 			<?php endif; 
 			} ?>
