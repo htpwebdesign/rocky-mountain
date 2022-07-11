@@ -13,17 +13,28 @@
     }
 
      // Grid Wrapper for Filter Sections
-     @media (min-width: 33.75rem) {
+    
     section.grid-wrapper {
+      margin-top: 15rem;
+
+      @media (min-width: 33.75rem) {
       margin-top: 6rem;
+      }
     }
 
     // Workshops Page
+    section.workshops-wrapper {
+      margin-top: 25rem;
+    }
     section.workshops-wrapper,
     section.faq-wrapper {
+      
+
+      @media (min-width: 33.75rem) {
       margin-top: 9rem;
+      }
     }
-     }
-  }
+}
+  
 
  
