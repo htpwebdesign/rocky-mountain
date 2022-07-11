@@ -1,14 +1,15 @@
 .main-interior-wrapper {
     background-color: $offWhite;
     position: relative;
+    margin: 2rem auto;
   
     @media (min-width: 33.75rem) {
       width: 90%;
-      margin: 3rem auto;
+      margin: 6rem auto;
       border: 3px solid $mediumGreen;
       border-radius: 27px;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 20%),
+        -3px -3px 10px 1px rgba(0, 0, 0, 20%);
     }
   
   }

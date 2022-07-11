@@ -10,6 +10,8 @@
 get_header();
 get_template_part('template-parts/content-banner');?>
 
+<main id="primary" class="site-main">
+<div class="main-interior-wrapper">
 <div class="filter-wrapper">
     <section class="button-group filter-button-group">
         <button data-filter="*">Show All</button> <?php
@@ -36,7 +38,7 @@ get_template_part('template-parts/content-banner');?>
 </div>
 
 <div class="grid">
-    <main>
+    
         <header> <?php
             post_type_archive_title( '<h1>', '</h1>' );
             the_archive_description( '<div>', '</div>'); ?>
@@ -80,5 +82,6 @@ get_template_part('template-parts/content-banner');?>
         echo '</section>'; ?>
     </main>
 </div>
+        </div>
 <?php
 get_footer();

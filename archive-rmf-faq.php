@@ -14,7 +14,7 @@ get_template_part('template-parts/content-banner'); ?>
 		
 		if ( have_posts() ) : 
 		endif; ?>
-        
+        <div class="main-interior-wrapper">
 		<div class="filter-wrapper">
 			<section class="button-group filter-button-group">
 				<button data-filter="*">Show All</button> <?php
@@ -56,7 +56,7 @@ get_template_part('template-parts/content-banner'); ?>
 				endif; ?>
 			</section>
 		</section>
-
+			</div>
 	</main><!-- #primary -->
 
 <?php
