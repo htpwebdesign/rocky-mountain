@@ -38,7 +38,6 @@ get_header(); ?>
 						</div>
 
 					</article>
-				</div>
 				</section>
 			<?php endif; 
 			} ?>
