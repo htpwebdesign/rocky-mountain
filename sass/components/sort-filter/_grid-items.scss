@@ -1,0 +1,24 @@
+.grid-item.line-up-item,
+.grid-item.workshop-item,
+.grid-item.vendor-item,
+.grid-item.faq-item {
+    left: 0px!important;
+    right: 0px;
+}
+
+.faq-item {
+    width: 90%!important;
+    margin: 0 auto;
+}
+
+// .grid-item.line-up-item {
+//     @include mq($desktop){
+//         width: 40%;
+//         top: unset;
+//         right: unset;
+//         left: unset;
+//         top: initial;
+//         right: initial;
+//         left: initial;
+//     }
+// }

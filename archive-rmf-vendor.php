@@ -9,8 +9,8 @@
 
     get_header();
     get_template_part('template-parts/content-banner');?>
-    
-
+    <main id="primary" class="site-main">
+    <!-- <div class="main-interior-wrapper"> -->
 <div class="filter-wrapper">
     <section class="button-group filter-button-group">
         <button data-filter="*">Show All</button><?php
@@ -23,8 +23,9 @@
         endforeach;?>
     </section>
 </div>
-    <section class="grid">
-        <main>
+<div class="main-interior-wrapper">
+    <section class="grid vendor-wrapper grid-wrapper">
+        
             <header>
                 <?php the_archive_description( '<section>', '</div>') ?>
             </header>
@@ -37,13 +38,13 @@
 
             $query = new WP_Query( $args );
  
-            echo '<section class="lineup-layout">';
+            echo '<section class="vendor-layout">';
 
             if ( $query->have_posts() ) :
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-                    echo '<article class="grid-item '.isotope_vendor_classes(get_the_id()).'">';
+                    echo '<article class="vendor-item grid-item '.isotope_vendor_classes(get_the_id()).'">';
                         echo '<h2>'. get_the_title() .'</h2>';
                             the_post_thumbnail( 'large' );
                             the_excerpt();
@@ -56,6 +57,7 @@
             
         </main>
     </div>
+        </div>
 
     <?php
     get_footer();
