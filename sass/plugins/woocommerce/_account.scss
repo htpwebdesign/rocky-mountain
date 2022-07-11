@@ -1,0 +1,61 @@
+#post-82 {
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $offWhite;
+    border-top: 3px solid $mediumGreen;
+    border-bottom: 3px solid $mediumGreen;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    margin: 1rem auto;
+    @media (min-width: 33.75rem) {
+      width: 90%;
+      border-radius: 27px;
+      border: 3px solid $mediumGreen;
+    }
+    .woocommerce {
+      max-width: 42.5rem;
+      margin: 1rem;
+    }
+    a {
+      color: $offWhite;
+      &:hover {
+        color: $orange;
+      }
+    }
+    .woocommerce-MyAccount-navigation,
+    .woocommerce-MyAccount-content {
+      margin: 1rem;
+      border: 3px solid $offWhite;
+      background-color: $mediumGreen;
+      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+      border-radius: 27px;
+      color: $offWhite;
+      padding: 1rem;
+    }
+  }
+  .u-column1,
+  .u-column2 {
+    margin: 1rem;
+    border: 3px solid $offWhite;
+    background-color: $mediumGreen;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    border-radius: 27px;
+    color: $offWhite;
+    padding: 1rem;
+    &.col-1 h2,
+    &.col-2 h2 {
+      text-align: center;
+      color: $offWhite;
+      clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
+    }
+    form {
+      box-shadow: unset;
+      border: unset;
+      text-align: center;
+    }
+  }
+}
