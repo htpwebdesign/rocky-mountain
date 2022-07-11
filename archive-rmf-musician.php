@@ -44,12 +44,9 @@ get_template_part('template-parts/content-banner'); ?>
     </section>
 </div>
 
-<div class="grid">
+<div class="grid lineup-wrapper">
     <main>
-        <header> <?php
-            post_type_archive_title( '<h1>', '</h1>' );
-            the_archive_description( '<div>', '</div>'); ?>
-        </header> <?php
+    <?php
 
         $args = array(
             'post_type' => 'rmf-musician',
@@ -64,25 +61,48 @@ get_template_part('template-parts/content-banner'); ?>
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-                    echo '<article class="grid-item '.isotope_musician_classes(get_the_id()).'">';
-                        echo '<h2>'. get_the_title() .'</h2>';
-                        the_post_thumbnail( 'large' );
-                        get_categories();
+                    echo '<article class="line-up-card grid-item '.isotope_musician_classes(get_the_id()).'">';
+                    ?> 
+                    <div class="line-up-whole-text">
+                     <h2 class="line-up-text"> 
+
+                        <?php 
+                            echo get_the_title(); 
+                        ?> 
+                        </h2>
+                        <?php
 
                         if ( function_exists ( 'get_field' ) ) :
                             if ( get_field( 'band_description' ) ) :
-                                echo '<p>'. the_field( 'band_description' ) .'</p>';
+                                ?> <p class="line-up-text"> <?php
+                                    the_field( 'band_description' );
+                                ?> </p> <?php
                             endif;
+
                             if ( get_field( 'day' ) ) :
-                                echo '<p>'. the_field( 'day' ) .'</p>';
+                                ?> <p class="line-up-text"> <?php
+                                    the_field( 'day' );
+                                ?> </p> <?php
                             endif;
-                            if ( get_field( 'start_time' ) ) :
-                                echo '<p>'. the_field( 'start_time' ) .'</p>';
+
+                            if ( get_field( 'start_time' ) ) :?>
+                                <p><?php the_field('location'); 
+                               $startTime = explode('2022', get_field('start_time'));
+                               echo $startTime[1], ' -';
+                               $endTime = explode('2022', get_field('end_time')); 
+                               echo $endTime[1]; ?>
+                               </p> <?php
+
+
                             endif;
                         endif;
-                        
-                        the_excerpt();
-                    echo '</article>';
+                        echo '</div>';
+                        ?> <div class="line-up-img">
+
+                    <?php
+                    echo the_post_thumbnail( 'large' );
+                    ?> </div>
+                    </article> <?php
                     
                 endwhile;
                 wp_reset_postdata();
