@@ -14,7 +14,7 @@ get_template_part('template-parts/content-banner'); ?>
 		
 		if ( have_posts() ) : 
 		endif; ?>
-        <div class="main-interior-wrapper">
+        <!-- <div class="main-interior-wrapper"> -->
 		<div class="filter-wrapper">
 			<section class="button-group filter-button-group">
 				<button data-filter="*">Show All</button> <?php
@@ -29,8 +29,9 @@ get_template_part('template-parts/content-banner'); ?>
 				endforeach; ?>
 			</section>
 		</div>
+        <div class="main-interior-wrapper">
 
-        <section class="grid"> <?php
+        <section class="grid faq-wrapper grid-wrapper"> <?php
 			$args = array( 
 				// matches with unique name we gave the cpt
 				'post_type' => 'rmf-faq',
@@ -45,7 +46,7 @@ get_template_part('template-parts/content-banner'); ?>
 					
 					while ( $query -> have_posts()) :
 						$query -> the_post();
-						echo '<article class="grid-item '.isotope_faq_classes(get_the_id()).'">'; ?>
+						echo '<article class="faq-item grid-item '.isotope_faq_classes(get_the_id()).'">'; ?>
 						<button class="accordion"><?php the_title(); ?></button>
 							<div class="panel">
 								<?php the_field('faq_description'); ?>

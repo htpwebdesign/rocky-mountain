@@ -11,7 +11,7 @@ get_header();
 get_template_part('template-parts/content-banner'); ?>
 
 <main id="primary" class="site-main">
-<div class="main-interior-wrapper">
+<!-- <div class="main-interior-wrapper"> -->
 <div class="filter-wrapper">
     <section class="button-group filter-button-group">
         
@@ -46,8 +46,10 @@ get_template_part('template-parts/content-banner'); ?>
         
     </section>
 </div>
+<div class="main-interior-wrapper">
 
-<div class="grid lineup-wrapper">
+
+<section class="grid lineup-wrapper grid-wrapper">
     
     <?php
 
@@ -64,7 +66,10 @@ get_template_part('template-parts/content-banner'); ?>
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-                    echo '<article class="line-up-card grid-item '.isotope_musician_classes(get_the_id()).'">';
+                    echo '<article class="line-up-card line-up-item grid-item '.isotope_musician_classes(get_the_id()).'">';
+                    ?> 
+                    <?php
+                    echo the_post_thumbnail( 'large' );
                     ?> 
                     <div class="line-up-whole-text">
                      <h2 class="line-up-text"> 
@@ -103,9 +108,7 @@ get_template_part('template-parts/content-banner'); ?>
                         ?> 
                         <div class="line-up-img">
 
-                    <?php
-                    echo the_post_thumbnail( 'large' );
-                    ?> 
+                    
                     </div>
                     </article> <?php
                     
@@ -114,7 +117,7 @@ get_template_part('template-parts/content-banner'); ?>
             endif;
         echo '</section>'; ?>
     </main>
-</div>
+        </section>
         </div>
 <?php
 get_footer();

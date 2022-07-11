@@ -1,0 +1,12 @@
+.grid-item.line-up-item,
+.grid-item.workshop-item,
+.grid-item.vendor-item,
+.grid-item.faq-item {
+    left: 0px!important;
+    right: 0px;
+}
+
+.faq-item {
+    width: 90%!important;
+    margin: 0 auto;
+}

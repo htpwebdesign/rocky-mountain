@@ -11,5 +11,19 @@
       box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 20%),
         -3px -3px 10px 1px rgba(0, 0, 0, 20%);
     }
-  
+
+     // Grid Wrapper for Filter Sections
+     @media (min-width: 33.75rem) {
+    section.grid-wrapper {
+      margin-top: 6rem;
+    }
+
+    // Workshops Page
+    section.workshops-wrapper,
+    section.faq-wrapper {
+      margin-top: 9rem;
+    }
+     }
   }
+
+ 

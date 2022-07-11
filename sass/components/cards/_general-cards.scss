@@ -1,3 +1,6 @@
+
+// **** Music Line Up Cards
+//                ********//
 .lineup-layout article{
     // background-color: $color__background-screen;
     // margin: 1rem;
@@ -14,16 +17,16 @@
     }
 }
 
-.lineup-wrapper{
-    // max-width: 90rem;
-    // margin-left: auto;
-    // margin-right: auto;
-    // margin-top: 2rem;
+// .lineup-wrapper{
+//     // max-width: 90rem;
+//     // margin-left: auto;
+//     // margin-right: auto;
+//     // margin-top: 2rem;
 
-    // @include mq($desktop){
-    //     margin-top: 3rem;
-    // }
-}
+//     // @include mq($desktop){
+//     //     margin-top: 3rem;
+//     // }
+// }
 
 .line-up-card {
     // max-width: 45%;
@@ -38,7 +41,7 @@
   
 }
 
-.line-up-whole-text {
+.line-up-whole-text, .workshop-text {
     // max-width: 20rem;
     padding: 1rem 1.5rem;
     // display: block;
@@ -63,3 +66,53 @@
     font-size: 1.5rem;
 }
 
+
+// **** Workshop Cards
+//   ****************//
+.workshop-layout {
+    article {
+        display: grid;
+        border: 2px solid $darkGreen;
+        margin: 1rem 1rem;
+        left: initial;
+        // text-align: center;
+
+        img {
+        margin: 0px;
+        object-fit: cover;
+        height: 100%;
+    }
+
+        @include mq($tabletWide){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+
+// **** Vendor Cards
+//   ****************//
+.vendor-layout {
+    
+    article {
+    margin: 2rem 0;
+    text-align: center;
+    
+    display: grid;
+    // border: 2px solid $darkGreen;
+    justify-content: center;
+    margin: 1rem 1rem;
+    left: initial;
+    gap: 1rem;
+
+    @include mq($tabletWide){
+        grid-template-columns: 1fr 1fr;
+        text-align: right;
+    }
+
+    img {
+        width: 50%;
+        margin: 0 auto 2rem;
+    }
+    }
+}
