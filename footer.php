@@ -57,28 +57,6 @@
 					</nav>
 				</article>
 
-<<<<<<< Updated upstream
-		<section class="newsletter-updates">
-			<h2>Sign up for updates!</h2>
-				<p>Stay up to date on news about our Vendors, Workshops and Musical Line-Up!</p>
-				<?php echo do_shortcode('[contact-form-7 id="378" title="Newsletter Sign Up"]') ?>
-		</section>
-		<section class="social-links">
-			<h2>Follow Us!</h2>
-			<nav id="social-navigation" class="social-navigation">
-				<?php
-					wp_nav_menu( array("theme_location" => "social"));
-				?>
-			</nav>
-		</section>
-		<section class="legal-links">
-			<nav id="legal-navigation" class="legal-navigation">
-				<?php
-					wp_nav_menu( array("theme_location" => "legal"));
-				?>
-			
-			</nav>
-=======
 				<article class="newsletter-updates">
 					<h2>Sign up for updates!</h2>
 						<p>Stay up to date on news about our Vendors, Workshops and Musical Line-Up!</p>
@@ -101,7 +79,6 @@
 					</section>
 				</article>
 			</div>
->>>>>>> Stashed changes
 		</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
