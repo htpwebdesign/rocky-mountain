@@ -2,7 +2,6 @@
 .site-footer {
     padding-top: 2rem;
     display: grid;
-    // font-size: 1rem;
     grid-template-rows: auto;
 
     .featured-vendors {
@@ -36,38 +35,6 @@
       " . legal legal . ";
       padding: 4rem 2rem;
      
-    }
-
-    // Featured vendors
-    .featured-vendors {
-        text-align: center;
-        padding-bottom: 4rem;
-    
-        .featured-vendors-items-wrapper {
-            // .featured-vendor {
-            //     grid-area: vendor;
-            //   }
-
-            @include mq($tabletWide){
-                display: grid;
-                grid-template-columns: repeat(3, 33.3%);
-             }
-            // display: grid;
-            // grid-template-columns: repeat(3, 30%);
-            // grid-template-areas:
-            // ". vendor vendor vendor . ";
-
-            .featured-vendor {
-                img {
-                    max-width: 50%;
-                    @include mq($tabletWide){
-                        max-width: 75%;
-
-                     }
-                }
-            }
-
-        }
     }
 
     // Design Styles
@@ -164,3 +131,5 @@
     }
     
 }
+
+@import 'featured-vendors'
