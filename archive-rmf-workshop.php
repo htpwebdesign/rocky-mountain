@@ -10,6 +10,8 @@
 get_header();
 get_template_part('template-parts/content-banner');?>
 
+<main id="primary" class="site-main">
+<!-- <div class="main-interior-wrapper"> -->
 <div class="filter-wrapper">
     <section class="button-group filter-button-group">
         <button data-filter="*">Show All</button> <?php
@@ -34,12 +36,12 @@ get_template_part('template-parts/content-banner');?>
 
     </section>
 </div>
-
-<div class="grid">
-    <main>
+<div class="main-interior-wrapper">
+<section class="grid workshops-wrapper grid-wrapper">
+    
         <header> <?php
-            post_type_archive_title( '<h1>', '</h1>' );
-            the_archive_description( '<div>', '</div>'); ?>
+            // post_type_archive_title( '<h1>', '</h1>' );
+            // the_archive_description( '<div>', '</div>'); ?>
         </header> <?php
 
         $args = array(
@@ -55,23 +57,56 @@ get_template_part('template-parts/content-banner');?>
                 while ( $query->have_posts() ) :
                     $query->the_post();
 
-                    echo '<article class="grid-item '.isotope_workshop_classes(get_the_id()).'">';
-                        echo '<h2>'. get_the_title() .'</h2>';
+                    echo '<article class="grid-item workshop-item '.isotope_workshop_classes(get_the_id()).'">';
                         the_post_thumbnail( 'large' );
+
+                        ?>
+                        <div class="workshop-text">
+                        <?php
                         
-                        if ( function_exists ( 'get_field' ) ) :                
+                        if ( function_exists ( 'get_field' ) ) :   
+                            echo '<h2>'. get_the_title() .'</h2>';
+             
                             if ( get_field( 'workshop_description' ) ) :
-                                echo '<p>'. the_field( 'workshop_description' ) .'</p>';
+                                ?>
+                                <p>
+                                <?php
+                                echo the_field( 'workshop_description' );
+
+                                ?>
+                                </p>
+                                <?php
                             endif;
-                            if ( get_field( 'day' ) ) :
-                                echo '<p>'. the_field( 'day' ) .'</p>';
+
+                            if ( get_field( 'workshop_day' ) ) :
+                                ?> <p class="line-up-day"> <?php
+                                    the_field( 'workshop_day' );
+                                ?> </p> <?php
                             endif;
-                            if ( get_field( 'start_time' ) ) :
-                                echo '<p>'. the_field( 'start_time' ) .'</p>';
+
+                            if ( get_field( 'workshop_time' ) ) :?>
+                                <p class="line-up-location-time"><?php the_field('workshop_location'); 
+                               $startTime = explode('2022', get_field('workshop_time'));
+                               echo $startTime[1], ' -';
+                               $endTime = explode('2022', get_field('workshop_end_time')); 
+                               echo $endTime[1]; ?>
+                               </p> <?php
+
+
                             endif;
+                            //  end jayson new code to fix venue and time
+
+                            // if ( get_field( 'workshop_day' ) ) :
+                            //     echo '<p>'. get_the_field( 'workshop_day' ) .'</p>';
+                            // endif;
+                            // if ( get_field( 'workshop_time' ) ) :
+                            //     echo '<p>'. the_field( 'workshop_time' ) .'</p>';
+                            // endif;
                         endif;
-                        
-                        the_excerpt();
+                        ?>
+                        </div>
+                        <?php
+                        // the_excerpt();
                     echo '</article>';
 
                 endwhile;
@@ -79,6 +114,7 @@ get_template_part('template-parts/content-banner');?>
             endif;
         echo '</section>'; ?>
     </main>
-</div>
+        </section>
+        </div>
 <?php
 get_footer();

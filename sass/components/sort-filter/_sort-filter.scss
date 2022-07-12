@@ -2,8 +2,13 @@
     filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     min-width: 270px;
     max-width: 685px;
-    position: relative;
+    // position: relative;
     margin: 0 auto;
+    position: absolute;
+    top: 17.5rem;
+    right: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .filter-button-group {

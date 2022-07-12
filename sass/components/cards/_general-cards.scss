@@ -1,27 +1,118 @@
+
+// **** Music Line Up Cards
+//                ********//
 .lineup-layout article{
-    background-color: $color__background-screen;
-    margin: 1rem;
-    max-height: 40rem;
-    max-width: 40rem;
-    display: flex;
-    justify-content: space-between;
+    // background-color: $color__background-screen;
+    // margin: 1rem;
+    // max-height: 40rem;
+    // max-width: 90%;
+    display: grid;
+    // justify-content: space-between;
+    border: 2px solid $darkGreen;
+    margin: 1rem 1rem;
+    left: initial;
+
+    @include mq($tabletWide){
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-.lineup-wrapper{
-    max-width: 90rem;
-    margin-left: auto;
-    margin-right: auto;
-}
+// .lineup-wrapper{
+//     // max-width: 90rem;
+//     // margin-left: auto;
+//     // margin-right: auto;
+//     // margin-top: 2rem;
 
-.line-up-img{
-    max-width: 45%;
-    display: flex;
+//     // @include mq($desktop){
+//     //     margin-top: 3rem;
+//     // }
+// }
+
+.line-up-card {
+    // max-width: 45%;
+    // display: flex;
     flex-wrap: wrap;
-    margin-left: 2.5rem;
+    // margin-left: 2.5rem;
+    img {
+        margin: 0px;
+        object-fit: cover;
+        height: 100%;
+    }
+  
 }
 
-.line-up-whole-text {
-    max-width: 20rem;
-    padding-left: 1rem;
-    display: block;
+.line-up-whole-text, .workshop-text {
+    // max-width: 20rem;
+    padding: 1rem 1.5rem;
+    // display: block;
+}
+
+.line-up-text {
+    margin: 0.5rem 0;
+}
+
+.line-up-day,
+.line-up-location-time {
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-bottom: 0px;
+}
+
+.line-up-day {
+    font-family: "Slackey", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+// **** Workshop Cards
+//   ****************//
+.workshop-layout {
+    article {
+        display: grid;
+        border: 2px solid $darkGreen;
+        margin: 1rem 1rem;
+        left: initial;
+        // text-align: center;
+
+        img {
+        margin: 0px;
+        object-fit: cover;
+        height: 100%;
+    }
+
+        @include mq($tabletWide){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+
+// **** Vendor Cards
+//   ****************//
+.vendor-layout {
+    
+    article {
+    margin: 2rem 0;
+    text-align: center;
+    
+    display: grid;
+    // border: 2px solid $darkGreen;
+    justify-content: center;
+    margin: 1rem 1rem;
+    left: initial;
+    gap: 1rem;
+
+    @include mq($tabletWide){
+        grid-template-columns: 1fr 1fr;
+        text-align: right;
+    }
+
+    img {
+        width: 50%;
+        margin: 0 auto 2rem;
+    }
+    }
 }
