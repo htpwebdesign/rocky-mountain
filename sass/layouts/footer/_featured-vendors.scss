@@ -1,0 +1,32 @@
+.featured-vendors {
+    width: 100%;
+
+
+    .featured-vendors-items-wrapper {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        article {
+            width: 300px;
+            background-color: $offWhite;
+            border: 3px solid $orange;
+            border-radius: 3rem;
+            padding: 1rem;
+            h3 {
+                width: 100%;
+                color: $darkBlue;
+                font-size: 1.15em;
+            }
+            img {
+                object-fit: cover;
+                max-width: 145px;
+            }
+        }
+
+    }
+}
