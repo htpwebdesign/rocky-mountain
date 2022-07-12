@@ -27,7 +27,7 @@ get_template_part('template-parts/content-banner');
         </section>
 
         <section class='schedule-type'>
-                <h2>Musical Line Up</h2>
+            <h2>Musical Line Up</h2>
             <?php
             $date_now = date('2022-07-29');
             $args = array(
@@ -40,52 +40,53 @@ get_template_part('template-parts/content-banner');
                 $query = new WP_Query( $args );
             ?>
             <section>
-            <button class="accordion"><h3 class='accordion-title'>Day 1</h3></button>
-            <div class="panel">
-            <?php
-            if ( $query -> have_posts() ){
-                while ( $query -> have_posts() ) {
-                    $query -> the_post();
-                foreach( $query as $post ) :
-                    //Day 1 Schedule
-                    if (get_field('day') == "Day 1"): 
-                    ?>
-                    <article class='schedule-item'>
-                        <h4><?php the_title(); ?></h4>
-                        <p><?php the_field('location'); ?>:
-                        <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
-                    </article>
+                <button class="accordion"><h3 class='accordion-title'>Day 1</h3></button>
+                <div class="panel">
                     <?php
-                    endif;
-                endforeach;
-            }}
-            ?>
+                    if ( $query -> have_posts() ){
+                        while ( $query -> have_posts() ) {
+                            $query -> the_post();
+                        foreach( $query as $post ) :
+                            //Day 1 Schedule
+                            if (get_field('day') == "Day 1"): 
+                            ?>
+                            <article class='schedule-item'>
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_field('location'); ?>:
+                                <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
+                            </article>
+                            <?php
+                            endif;
+                        endforeach;
+                    }}
+                    ?>
+                </div>
             </section>
             <section>
-            <button class="accordion"><h3 class='accordion-title'>Day 2</h3></button>
-            <div class="panel">
-            <?php
-            if ( $query -> have_posts() ){
-                while ( $query -> have_posts() ) {
-                    $query -> the_post();
-                foreach( $query as $post ) :
-                    //Day 2 Schedule
-                    if (get_field('day') == "Day 2"): 
-                    ?>
-                    <article class='schedule-item'>
-                        <h4><?php the_title(); ?></h4>
-                        <p><?php the_field('location'); ?>:
-                        <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
-                    </article>
+                <button class="accordion"><h3 class='accordion-title'>Day 2</h3></button>
+                <div class="panel">
                     <?php
-                    endif;
-                endforeach;
-            }}
-            ?>
+                    if ( $query -> have_posts() ){
+                        while ( $query -> have_posts() ) {
+                            $query -> the_post();
+                        foreach( $query as $post ) :
+                            //Day 2 Schedule
+                            if (get_field('day') == "Day 2"): 
+                            ?>
+                            <article class='schedule-item'>
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_field('location'); ?>:
+                                <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('end_time')); echo $endTime[1]; ?></p>
+                            </article>
+                            <?php
+                            endif;
+                        endforeach;
+                    }}
+                    ?>
+                </div>
             </section>
-            </div>
-            
-            <section class='schedule-type '>
+        </section>
+        <section class='schedule-type '>
             <h2>Workshops</h2>
             <?php
             $date_now = date('2022-07-29');
@@ -99,55 +100,53 @@ get_template_part('template-parts/content-banner');
                 $query = new WP_Query( $args );
             ?>
             <section>
-            <button class="accordion"><h3>Day 1</h3></button>
-            <div class="panel">
-            <?php
-            if ( $query -> have_posts() ){
-                while ( $query -> have_posts() ) {
-                    $query -> the_post();
-                    
-                    foreach( $query as $post ) :
-                        //Day 1 Schedule
-                        if (get_field('workshop_day') == "Saturday"): 
-                        ?>
-                        <article class='schedule-item'>
-                            <h4><?php the_title(); ?></h4>
-                            <p><?php the_field('workshop_location'); ?>:
-                             <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
-                        </article>
-                        <?php
-                        endif;
-                    endforeach;
-            }}
-            ?>
-            </div>
+                <button class="accordion"><h3>Day 1</h3></button>
+                <div class="panel">
+                <?php
+                if ( $query -> have_posts() ){
+                    while ( $query -> have_posts() ) {
+                        $query -> the_post();
+                        
+                        foreach( $query as $post ) :
+                            //Day 1 Schedule
+                            if (get_field('workshop_day') == "Saturday"): 
+                            ?>
+                            <article class='schedule-item'>
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_field('workshop_location'); ?>:
+                                <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
+                            </article>
+                            <?php
+                            endif;
+                        endforeach;
+                }}
+                ?>
+                </div>
             </section>
             <section>
-            <button class="accordion"><h3>Day 2</h3></button>
-            <div class="panel">
-            <?php
-            if ( $query -> have_posts() ){
-                while ( $query -> have_posts() ) {
-                    $query -> the_post();
-                    foreach( $query as $post ) :
-                        //Day 2 Schedule
-                        if (get_field('workshop_day') == "Sunday"): 
-                        ?>
-                        <article class='schedule-item'>
-                            <h4><?php the_title(); ?></h4>
-                            <p><?php the_field('workshop_location'); ?>:
-                            <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
-                        </article>
-                        <?php
-                        endif;
-                    endforeach;
-            }}
-            ?>
-            </div>
+                <button class="accordion"><h3>Day 2</h3></button>
+                <div class="panel">
+                <?php
+                if ( $query -> have_posts() ){
+                    while ( $query -> have_posts() ) {
+                        $query -> the_post();
+                        foreach( $query as $post ) :
+                            //Day 2 Schedule
+                            if (get_field('workshop_day') == "Sunday"): 
+                            ?>
+                            <article class='schedule-item'>
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_field('workshop_location'); ?>:
+                                <?php $startTime = explode('2022', get_field('workshop_time')); echo $startTime[1]; ?> - <?php $endTime = explode('2022', get_field('workshop_end_time')); echo $endTime[1]; ?></p>
+                            </article>
+                            <?php
+                            endif;
+                        endforeach;
+                }}
+                ?>
+                </div>
             </section>
         </section>
-
-
 		<?php endwhile; // End of the loop.?>
 	</main><!-- #main -->
 
