@@ -190,7 +190,7 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 // Remove block editor on pages with listed IDs
 function fwd_post_filter( $use_block_editor, $post ) {
  // # in the array is the ID of the page you want to remove block editor
-    $page_ids = array( 34, 28, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20);
+    $page_ids = array( 34, 28, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20, 40);
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
