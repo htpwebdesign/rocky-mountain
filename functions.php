@@ -273,6 +273,7 @@ function rmf_colours_admin_color_scheme() {
   // Add submenu functionality for mobile
   require get_template_directory() . '/inc/submenus.php';
 
+
   // Edit wysiwig editor
 
 function my_toolbars( $toolbars ) {
@@ -285,3 +286,21 @@ function my_toolbars( $toolbars ) {
 	return $toolbars;
 }
   add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+
+  /**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Remove admin menu links for non-Administrator accounts
+function fwd_remove_admin_links() {
+	if ( !current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'edit.php' );           // Remove Posts link
+    		remove_menu_page( 'edit-comments.php' );  // Remove Comments link
+	}
+}
+add_action( 'admin_menu', 'fwd_remove_admin_links' );
+
