@@ -273,20 +273,6 @@ function rmf_colours_admin_color_scheme() {
   // Add submenu functionality for mobile
   require get_template_directory() . '/inc/submenus.php';
 
-
-  // Edit wysiwig editor
-
-function my_toolbars( $toolbars ) {
-	$toolbars['Very Simple' ] = array();
-	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
-	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false ) {
-	    unset( $toolbars['Full' ][2][$key] );
-	}
-	
-	return $toolbars;
-}
-  add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
-
   /**
  * Lower Yoast SEO Metabox location
  */
@@ -303,4 +289,3 @@ function fwd_remove_admin_links() {
 	}
 }
 add_action( 'admin_menu', 'fwd_remove_admin_links' );
-
