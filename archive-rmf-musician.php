@@ -68,9 +68,11 @@ get_template_part('template-parts/content-banner'); ?>
 
                     echo '<article class="line-up-card line-up-item grid-item '.isotope_musician_classes(get_the_id()).'">';
                     ?> 
+                    <div>
                     <?php
                     echo the_post_thumbnail( 'large' );
                     ?> 
+                    </div>
                     <div class="line-up-whole-text">
                      <h2 class="line-up-text"> 
 
