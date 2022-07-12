@@ -1,8 +1,18 @@
-.main-interior-wrapper {
+.card-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 81.25rem;
+    padding: 6rem 3rem 3rem 3rem;
+    background-color: $offWhite;
+    border: 0.1875rem $lightGreen solid;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    margin: -8rem auto 0 auto;
+    z-index: 2;
+    box-shadow: 5px 5px 10px $black-50;
+    @media (min-width: 700px) {
+        margin: -2rem auto 0 auto;
+        padding: 3rem;
 
-    section {
-        padding: 1rem 2rem;
-        margin: 1rem auto;
     }
-    
 }
