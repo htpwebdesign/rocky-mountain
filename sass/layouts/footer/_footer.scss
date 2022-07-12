@@ -1,112 +1,135 @@
+// Footer Layouts
 .site-footer {
-    margin-top: -7rem;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-rows: auto;
 
-    .footer {
-        background-color: $darkGreen;
-        margin: -0.125rem auto -3rem auto;
-        .footer-wrapper {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            width: 90%;
-            width: 20rem;
-            margin: 0 auto;
-            padding: 1rem;
-            @media (min-width: 39.5rem) {
-                flex-direction: row;
-                width: auto;
-                max-width: 81.25rem;
-            }
-            h2 {
-                font-size: 1.75rem;
-                color: $offWhite;
-                margin: 0;
-                line-height: 1em;
-            }
+    .featured-vendors {
+        grid-area: vendors;
+      }
+      .important-links {
+        grid-area: links;
+      }
+      .newsletter-updates {
+        grid-area: news;
+      }
+      .social-links {
+        grid-area: social;
+      }
+      .legal-links {
+        grid-area: legal;
+      }
 
-            p {
-                font-weight: bold;
-                font-size: 1.125em;
-                color: $offWhite;
-            }
-            a {
-                font-weight: bold;
-                font-size: 1.5em;
-                color: $offWhite;
-            }
-            article {
-                margin: 2em auto;
-                width: 12.7rem;
-            }
-        }
+    grid-template-areas: 
+      "vendors vendors vendors"
+      ". links ."
+      ". news ."
+      ". social ."
+      " . legal . ";
+     
+    @include mq($tabletWide) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+      "vendors vendors vendors vendors"
+      "news news links social"
+      " . legal legal . ";
+      padding: 4rem 2rem;
+     
+    }
 
-        article.important-links {
-            .footer-navigation {
-                margin-top: 1.5rem;
-            }
-        }
-        
-        .important-links::before {
-            content: '';
-            display: block;
-            width: 80%;
-            height: 0.0625rem;
-            background-color: $offWhite-50;
-            margin: 0 auto 3rem auto;
-            @media (min-width: 39.5rem) {
-                display: none;
-            }
-        }
-        article.social-links {
-            .social-navigation .menu-social-container .menu {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                width: 100%;
-                li {
-                    margin: 2rem 3.25rem 0 0;
-                }
-            }
-        }
-        .newsletter-updates {
-            max-width: 16.875rem;
-            p {
-                margin-bottom: .25rem;
-            }
-            form {
-                p {
-                    margin: .25em 0;
-                }
-                input {
-                    width: 200px;
-                    background-color: $offWhite-50;
-                    &.wpcf7-submit {
-                        font-family: $font_headers;
-                        font-size: 1rem;
-                        text-align: center;
-                        color: $darkGreen;
-                        background-color: $offWhite;
-                        margin-top: .5rem;
-                    }
-                }
-            }
-        }
-        article.legal-links {
-            margin: 0;
-            padding-bottom: 2rem;
-            display: inline-flex;
-            nav div ul {
-                display: flex;
-                flex-direction: row;
-                li {
-                    margin-right: 0.75rem;
-                    font-size: 0.8rem;
-                }
-            }
+    // Design Styles
+    // General
+    background-color: $darkGreen;
+    color: $offWhite;
+    h2 {
+        font-size: 1.25rem;
+        color: $offWhite;
+    }
+    a, h3  {
+        color: $offWhite;
+    }
+
+    .featured-vendors {
+        h2 {
+            font-size: 2rem;
         }
     }
-}
 
+
+    // Newsletter
+    .newsletter-updates {
+        input {
+            width: 100%;
+
+            @include mq($tabletWide){
+                width: 66.67%;
+             } 
+        }
+        input[type=submit] {
+            width: 40%;
+            border: 1px solid;
+            border-color: #FDEDDF;
+            border-radius: 3px;
+            background: white;
+            color: black;
+            line-height: 1;
+            padding: 0.6em 1em 0.4em;
+        }
+        input {
+            color: #598A7E;
+            border: 1px solid $lightBlue-75;
+            border-radius: 3px;
+            padding: 3px;
+            background-color: $lightBlue-50;
+        }
+    }
+
+    // Important Links
+    .important-links {
+        li {
+            font-size: 1.25rem;
+            padding-top: 1rem;
+            text-decoration: none;
+        }
+    }
+
+    // Social Links & Legal Links
+    .social-links, .legal-links, .important-links {
+        ul {
+        list-style-type: none;
+        padding-inline-start: 0px;
+        margin-left: 0px;
+        text-align: left;
+    }
+    }
+    .social-links, .legal-links {
+        
+        li {
+            display: inline-block;
+            padding: 0.5rem 0.75rem 0.5rem 0rem;
+        }
+    }
+    .legal-links {
+        text-align: center;
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .menu-social {
+        .menu-item-379::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='50' r='40' stroke='black' stroke-width='2' fill='red'/%3E%3Cpolyline points='20,20 40,25 60,40 80,120 120,140 200,180' style='fill:none;stroke:black;stroke-width:3'/%3E%3C/svg%3E ");
+            width: 200px;
+            height: 200px;
+          }
+    }
+
+    #social-navigation nav {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+}
 
 @import 'featured-vendors'

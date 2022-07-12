@@ -1,5 +1,5 @@
 .home {
-    .home-hero-wrapper h1 {
+    h1 {
         font-size: 1.65em;
         line-height: 1.15;
         letter-spacing: -1.5px;
@@ -11,7 +11,7 @@
         }
     }
 
-    .home-hero-wrapper h2 {
+    h2 {
         font-family: $font__main;
         font-weight: bold;
         font-style: italic;
@@ -27,8 +27,7 @@
     }
 
     @media (min-width: 830px) {
-        .home-hero-wrapper h1,
-        .home-hero-wrapper h2 {
+        h1, h2 {
             text-align: left;
         }
     }
