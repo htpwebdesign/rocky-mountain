@@ -21,9 +21,7 @@ get_template_part('template-parts/content-banner');
 			</header>
 			<div class="content-wrapper">
 				<div class="entry-content">
-					<?php
-					the_content(); 
-					?>
+						<?php echo do_shortcode('[contact-form-7 id="328" title="Contact Us Form"]')?>
 				</div>
 			</div>
 
