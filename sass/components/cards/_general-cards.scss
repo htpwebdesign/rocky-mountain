@@ -103,27 +103,27 @@
 
 // **** Vendor Cards
 //   ****************//
-.vendor-layout {
+// .vendor-layout {
     
-    article {
-    margin: 2rem 0;
-    text-align: center;
+//     article {
+//     margin: 2rem 0;
+//     text-align: center;
     
-    display: grid;
-    // border: 2px solid $darkGreen;
-    justify-content: center;
-    margin: 1rem 1rem;
-    left: initial;
-    gap: 1rem;
+//     display: grid;
+//     // border: 2px solid $darkGreen;
+//     justify-content: center;
+//     margin: 1rem 1rem;
+//     left: initial;
+//     gap: 1rem;
 
-    @include mq($tabletWide){
-        grid-template-columns: 1fr 1fr;
-        text-align: right;
-    }
+//     @include mq($tabletWide){
+//         grid-template-columns: 1fr 1fr;
+//         text-align: right;
+//     }
 
-    img {
-        width: 50%;
-        margin: 0 auto 2rem;
-    }
-    }
-}
+//     img {
+//         width: 50%;
+//         margin: 0 auto 2rem;
+//     }
+//     }
+// }
