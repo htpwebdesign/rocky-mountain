@@ -11,7 +11,7 @@ get_header();
 get_template_part('template-parts/content-banner');?>
 
 <main id="primary" class="site-main">
-<!-- <div class="main-interior-wrapper"> -->
+
 <div class="filter-wrapper">
     <section class="button-group filter-button-group">
         <button data-filter="*">Show All</button> <?php
@@ -36,13 +36,7 @@ get_template_part('template-parts/content-banner');?>
 
     </section>
 </div>
-<div class="main-interior-wrapper">
-<section class="grid workshops-wrapper grid-wrapper">
-    
-        <header> <?php
-            // post_type_archive_title( '<h1>', '</h1>' );
-            // the_archive_description( '<div>', '</div>'); ?>
-        </header> <?php
+<section class="grid workshops-wrapper grid-wrapper"> <?php
 
         $args = array(
             'post_type' => 'rmf-workshop',
@@ -61,7 +55,6 @@ get_template_part('template-parts/content-banner');?>
                             the_post_thumbnail( 'large' );
 
                             ?>
-                            <div class="workshop-text">
                             <?php
                             
                             if ( function_exists ( 'get_field' ) ) :   
@@ -79,9 +72,9 @@ get_template_part('template-parts/content-banner');?>
                                 endif;
 
                                 if ( get_field( 'workshop_day' ) ) :
-                                    ?> <p class="line-up-day"> <?php
+                                    ?> <h3 class="line-up-day"> <?php
                                         the_field( 'workshop_day' );
-                                    ?> </p> <?php
+                                    ?> </h3> <?php
                                 endif;
 
                                 if ( get_field( 'workshop_time' ) ) :?>
@@ -104,7 +97,6 @@ get_template_part('template-parts/content-banner');?>
                                 // endif;
                             endif;
                             ?>
-                            </div>
                             <?php
                             // the_excerpt();
                         echo '</article>';
@@ -115,7 +107,5 @@ get_template_part('template-parts/content-banner');?>
             echo '</div>';
         echo '</section>'; ?>
     </main>
-        </section>
-        </div>
-<?php
+        </section> <?php
 get_footer();
