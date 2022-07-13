@@ -50,4 +50,5 @@ get_template_part('template-parts/content-banner'); ?>
 	</main><!-- #primary -->
 
 <?php
+
 get_footer();

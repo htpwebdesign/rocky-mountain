@@ -190,7 +190,7 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 // Remove block editor on pages with listed IDs
 function fwd_post_filter( $use_block_editor, $post ) {
  // # in the array is the ID of the page you want to remove block editor
-    $page_ids = array( 34, 28, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20);
+    $page_ids = array( 34, 28, 32, 30, 36, 13, 17, 26, 38, 15, 22, 24, 20, 40);
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
@@ -272,3 +272,137 @@ function rmf_colours_admin_color_scheme() {
   
   // Add submenu functionality for mobile
   require get_template_directory() . '/inc/submenus.php';
+
+  /**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// Remove admin menu links for non-Administrator accounts
+function fwd_remove_admin_links() {
+	if ( !current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'edit.php' );           // Remove Posts link
+    		remove_menu_page( 'edit-comments.php' );  // Remove Comments link
+	}
+}
+add_action( 'admin_menu', 'fwd_remove_admin_links' );
+
+// Add logo to back-end login
+function wpb_login_logo() { ?>
+<style type="text/css">
+#login h1 a, .login h1 a {
+background-image: url("http://rockymountainfest.bcitwebdeveloper.ca/wp-content/uploads/2022/06/RMF-logo-horizontal-1.svg");
+height:100px;
+width:300px;
+background-size: 300px 100px;
+background-repeat: no-repeat;
+padding-bottom: 10px;
+}
+</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'wpb_login_logo' );
+
+// Change link on back end login
+function my_login_logo_url() {
+return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+function my_login_logo_url_title() {
+return 'Your Site Name to Here';
+}
+add_filter( 'login_headertext', 'my_login_logo_url_title' );
+
+// Styling for the back end login form
+function my_login_form() { ?>
+<style type="text/css">
+body.login{
+	background-color:#FDEDDF;
+}
+body.login div#login form#loginform {
+background-color: #598A7E;
+border-radius:27px;
+border: 3px solid #FDEDDF;
+color: #FDEDDF;
+box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+
+}
+input#wp-submit{
+	background-color: #E46C43;
+	clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
+	padding: 1rem;
+	border: none;
+}
+</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_form' );
+
+// Removing dashboard widgets
+function remove_dashboard_widgets()
+{
+//first parameter -> slug/id of the widget
+//second parameter -> where the meta box is displayed, it can be page, post, dashboard etc.
+//third parameter -> position of the meta box. If you have used wp_add_dashboard_widget to create the widget or
+//deleting default widget then provide the value "normal".
+remove_meta_box('wc_admin_dashboard_setup', 'dashboard', "normal");
+remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+remove_meta_box('jetpack_summary_widget', 'dashboard', 'normal');
+remove_meta_box('tribe_dashboard_widget', 'dashboard', 'normal');
+remove_meta_box('wc_newsletter_subscription_stats', 'dashboard', 'normal');
+remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+remove_meta_box('dashboard_primary', 'dashboard', 'side');
+}
+add_action("wp_dashboard_setup", "remove_dashboard_widgets");
+
+// Adding custom widgets
+function my_custom_dashboard_widgets() {
+global $wp_meta_boxes;
+wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard_help');
+}
+function custom_dashboard_help() {
+echo '<p>Welcome to the back end of your Rocky Mountain Fest website! Need help? <a
+href="mailto:yourusername@gmail.com">Contact MAJC Creative Solutions</a>. For WordPress Tutorials prefer refer to the information package provided by your development team or this <a href="https://www.youtube.com/watch?v=kYY88h5J86A"
+target="_blank">video</a> might be helpful.</p>';
+}
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+// Custom back end menu 
+function wpse_custom_menu_order( $menu_ord ) {
+if ( !$menu_ord ) return true;
+	return array(
+		'index.php', // Dashboard
+		'separator1', // First separator
+		'edit.php', // Posts
+		'edit.php?post_type=rmf-musician', //Line up
+		'edit.php?post_type=rmf-workshop',// Workshops
+		'edit.php?post_type=rmf-vendor', //Vendors
+		'edit.php?post_type=rmf-faq', // FAQ
+		'edit.php?post_type=page', // Pages
+		'upload.php', // Media
+		'separator2', // Second separator
+		'woocommerce',
+		'edit.php?post_type=product', // Products
+		'wpseo_dashboard', // Yoast SEO
+		"admin.php?page=wc-admin&path=%2Fpayments%2Fconnect", //Payments
+		'wpcf7', // Contact forms
+		'link-manager.php', // Links
+		'themes.php', // Appearance
+		'plugins.php', // Plugins
+		'users.php', // Users
+		'tools.php', // Tools
+		'options-general.php', // Settings
+		'separator-last', // Last separator
+	);
+}
+add_filter( 'custom_menu_order', 'wpse_custom_menu_order');
+add_filter( 'menu_order', 'wpse_custom_menu_order' );
+//Links to remove
+add_action( 'admin_init', 'custom_remove_menu_pages' );
+function custom_remove_menu_pages() {
+	remove_menu_page( 'edit-comments.php' );
+}
