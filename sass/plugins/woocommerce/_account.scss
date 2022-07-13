@@ -26,52 +26,51 @@
     flex-direction: column;
     align-items: center;
     background-color: $offWhite;
-    border-top: 5px solid $mediumGreen;
-    border-bottom: 5px solid $mediumGreen;
+    border-top: 5px solid $lightGreen;
+    border-bottom: 5px solid $lightGreen;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     margin: 1rem auto;
     @media (min-width: 33.75rem) {
       width: 90%;
       border-radius: 27px;
-      border: 5px solid $mediumGreen;
+      border: 5px solid $lightGreen;
     }
     .woocommerce {
       max-width: 42.5rem;
       margin: 1rem;
     }
     a {
-      color: $offWhite;
-      &:hover {
-        color: $orange;
-      }
+      color: $darkBlue;
     }
-    .woocommerce-MyAccount-navigation,
+    .woocommerce-MyAccount-navigation {
+      width: 15rem;
+      border: 3px solid $mediumGreen;
+      border-radius: 27px;
+      margin: 1rem;
+      padding: 1rem;
+    }
     .woocommerce-MyAccount-content {
       margin: 1rem;
-      border: 5px solid $offWhite;
-      background-color: $mediumGreen;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
       border-radius: 27px;
-      color: $offWhite;
+      border: 3px solid $mediumGreen;
+      color: $darkBlue;
       padding: 1rem;
     }
   }
   .u-column1,
   .u-column2 {
     margin: 1rem;
-    border: 5px solid $offWhite;
-    background-color: $mediumGreen;
-    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
-    border-radius: 27px;
-    color: $offWhite;
+    background-color: $offWhite;
+    color: $darkBlue;
     padding: 1rem;
+    header {
+      margin-top: 0;
+    }
     &.col-1 h2,
     &.col-2 h2 {
       text-align: center;
-      color: $offWhite;
+      color: $darkBlue;
       clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
     }
     form {
@@ -79,5 +78,15 @@
       border: unset;
       text-align: center;
     }
+  }
+  .woocommerce-Message {
+    background-color: unset;
+    a.woocommerce-Button.button {
+      color: $darkBlue;
+    }
+  }
+  button.woocommerce-Button.button {
+    background-color: $darkBlue;
+    color: $offWhite;
   }
 }

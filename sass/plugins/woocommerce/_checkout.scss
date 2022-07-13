@@ -78,21 +78,25 @@ form.checkout_coupon.woocommerce-form-coupon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $mediumGreen;
-  border-top: 3px solid $offWhite;
-  border-bottom: 3px solid $offWhite;
+  background-color: $offWhite;
+  border-top: 3px solid $mediumGreen;
+  border-bottom: 3px solid $mediumGreen;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
     -3px -3px 10px 1px rgba(0, 0, 0, 35%);
   max-width: 42.5rem;
   p {
     margin: 1rem;
-    color: $offWhite;
+    color: $darkBlue;
   }
   @media (min-width: 33.75rem) {
     margin: 1rem auto;
     width: 80%;
     border-radius: 27px;
     border: 3px solid $offWhite;
+  }
+  button {
+    background-color: $darkBlue;
+    color: $offWhite;
   }
 }
 

@@ -148,23 +148,14 @@
   }
 }
 .woocommerce-message {
-  background-color: $mediumGreen !important;
+  background-color: $offWhite !important;
   padding: 1rem;
-  border-top: 3px solid $offWhite;
-  border-bottom: 3px solid $offWhite;
-  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
-  color: $offWhite;
+  color: $darkBlue;
   font-size: 1.25rem;
   a {
-    color: $offWhite;
-
-    &:hover {
-      color: $orange;
-    }
+    color: $darkBlue;
   }
 }
-
 .woocommerce-notices-wrapper {
   margin-bottom: 0.5rem;
 }
