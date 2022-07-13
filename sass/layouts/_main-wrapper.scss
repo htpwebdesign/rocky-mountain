@@ -15,10 +15,10 @@
      // Grid Wrapper for Filter Sections
     
     section.grid-wrapper {
-      margin-top: 15rem;
+      padding-top: 15rem;
 
       @media (min-width: 33.75rem) {
-      margin-top: 6rem;
+      padding-top: 6rem;
       }
     }
 
@@ -26,8 +26,7 @@
     section.workshops-wrapper {
       margin-top: 25rem;
     }
-    section.workshops-wrapper,
-    section.faq-wrapper {
+    section.workshops-wrapper{
       
 
       @media (min-width: 33.75rem) {
