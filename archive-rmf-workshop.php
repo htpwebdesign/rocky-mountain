@@ -52,66 +52,67 @@ get_template_part('template-parts/content-banner');?>
         $query = new WP_Query( $args );
         
         echo '<section class="workshop-layout">';
-            
-            if ( $query->have_posts() ) :
-                while ( $query->have_posts() ) :
-                    $query->the_post();
+            echo '<div class="grid-item-wrapper">';
+                if ( $query->have_posts() ) :
+                    while ( $query->have_posts() ) :
+                        $query->the_post();
 
-                    echo '<article class="grid-item workshop-item '.isotope_workshop_classes(get_the_id()).'">';
-                        the_post_thumbnail( 'large' );
+                        echo '<article class="grid-item workshop-item '.isotope_workshop_classes(get_the_id()).'">';
+                            the_post_thumbnail( 'large' );
 
-                        ?>
-                        <div class="workshop-text">
-                        <?php
-                        
-                        if ( function_exists ( 'get_field' ) ) :   
-                            echo '<h2>'. get_the_title() .'</h2>';
-             
-                            if ( get_field( 'workshop_description' ) ) :
-                                ?>
-                                <p>
-                                <?php
-                                echo the_field( 'workshop_description' );
+                            ?>
+                            <div class="workshop-text">
+                            <?php
+                            
+                            if ( function_exists ( 'get_field' ) ) :   
+                                echo '<h2>'. get_the_title() .'</h2>';
+                
+                                if ( get_field( 'workshop_description' ) ) :
+                                    ?>
+                                    <p>
+                                    <?php
+                                    echo the_field( 'workshop_description' );
 
-                                ?>
-                                </p>
-                                <?php
+                                    ?>
+                                    </p>
+                                    <?php
+                                endif;
+
+                                if ( get_field( 'workshop_day' ) ) :
+                                    ?> <p class="line-up-day"> <?php
+                                        the_field( 'workshop_day' );
+                                    ?> </p> <?php
+                                endif;
+
+                                if ( get_field( 'workshop_time' ) ) :?>
+                                    <p class="line-up-location-time"><?php the_field('workshop_location'); 
+                                $startTime = explode('2022', get_field('workshop_time'));
+                                echo $startTime[1], ' -';
+                                $endTime = explode('2022', get_field('workshop_end_time')); 
+                                echo $endTime[1]; ?>
+                                </p> <?php
+
+
+                                endif;
+                                //  end jayson new code to fix venue and time
+
+                                // if ( get_field( 'workshop_day' ) ) :
+                                //     echo '<p>'. get_the_field( 'workshop_day' ) .'</p>';
+                                // endif;
+                                // if ( get_field( 'workshop_time' ) ) :
+                                //     echo '<p>'. the_field( 'workshop_time' ) .'</p>';
+                                // endif;
                             endif;
+                            ?>
+                            </div>
+                            <?php
+                            // the_excerpt();
+                        echo '</article>';
 
-                            if ( get_field( 'workshop_day' ) ) :
-                                ?> <p class="line-up-day"> <?php
-                                    the_field( 'workshop_day' );
-                                ?> </p> <?php
-                            endif;
-
-                            if ( get_field( 'workshop_time' ) ) :?>
-                                <p class="line-up-location-time"><?php the_field('workshop_location'); 
-                               $startTime = explode('2022', get_field('workshop_time'));
-                               echo $startTime[1], ' -';
-                               $endTime = explode('2022', get_field('workshop_end_time')); 
-                               echo $endTime[1]; ?>
-                               </p> <?php
-
-
-                            endif;
-                            //  end jayson new code to fix venue and time
-
-                            // if ( get_field( 'workshop_day' ) ) :
-                            //     echo '<p>'. get_the_field( 'workshop_day' ) .'</p>';
-                            // endif;
-                            // if ( get_field( 'workshop_time' ) ) :
-                            //     echo '<p>'. the_field( 'workshop_time' ) .'</p>';
-                            // endif;
-                        endif;
-                        ?>
-                        </div>
-                        <?php
-                        // the_excerpt();
-                    echo '</article>';
-
-                endwhile;
-                wp_reset_postdata();
-            endif;
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+            echo '</div>';
         echo '</section>'; ?>
     </main>
         </section>

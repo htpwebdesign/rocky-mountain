@@ -1,4 +1,4 @@
-.vendor-layout {
+.vendor-layout, .lineup-layout, .workshop-layout {
     .grid-item-wrapper {
         width: 90%;
         height: 100%;
@@ -25,7 +25,9 @@
             grid-template-columns: repeat(4, 25%);
         }
     }
-    article.vendor-item {
+    article.vendor-item,
+    article.line-up-card,
+    .grid-item.workshop-item {
         max-width: 300px;
         max-height: 300px;
         display: grid;
