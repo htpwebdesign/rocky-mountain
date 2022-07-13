@@ -18,6 +18,35 @@
 // End of underscores CSS
 
 // RMF CSS
+.woocommerce-checkout {
+  main {
+    &:before {
+      content: "";
+      background: url("images/mountains-and-trees-green.svg") top center
+        repeat-x;
+      background-color: $skyBlue;
+      height: 9rem;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      right: 0;
+      bottom: -0.125rem;
+    }
+    #post-81 {
+      margin-top: 12rem;
+      h1 {
+        z-index: 5;
+        text-align: center;
+        clip-path: polygon(5% 0, 100% 8%, 100% 90%, 0% 100%);
+        background-color: $darkBlue;
+        color: $offWhite;
+        margin: 0 auto;
+        width: 17rem;
+      }
+    }
+  }
+}
+
 .woocommerce-form-login-toggle,
 .woocommerce-form-coupon-toggle {
   background-color: $mediumGreen;
@@ -38,6 +67,9 @@
     border: 3px solid $offWhite;
     .woocommerce-info {
       border-radius: 27px;
+      a {
+        color: $offWhite;
+      }
     }
   }
 }
@@ -46,15 +78,15 @@ form.checkout_coupon.woocommerce-form-coupon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $mediumGreen;
-  border-top: 3px solid $offWhite;
-  border-bottom: 3px solid $offWhite;
+  background-color: $offWhite;
+  border-top: 3px solid $mediumGreen;
+  border-bottom: 3px solid $mediumGreen;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
     -3px -3px 10px 1px rgba(0, 0, 0, 35%);
   max-width: 42.5rem;
   p {
     margin: 1rem;
-    color: $offWhite;
+    color: $darkBlue;
   }
   @media (min-width: 33.75rem) {
     margin: 1rem auto;
@@ -62,14 +94,18 @@ form.checkout_coupon.woocommerce-form-coupon {
     border-radius: 27px;
     border: 3px solid $offWhite;
   }
+  button {
+    background-color: $darkBlue;
+    color: $offWhite;
+  }
 }
 
 .checkout {
-  background-color: $mediumGreen;
-  color: $offWhite;
+  background-color: $offWhite;
+  color: $darkBlue;
   max-width: 42.5rem;
-  border-top: 3px solid $offWhite;
-  border-bottom: 3px solid $offWhite;
+  border-top: 3px solid $lightGreen;
+  border-bottom: 3px solid $lightGreen;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
     -3px -3px 10px 1px rgba(0, 0, 0, 35%);
   margin-top: 1rem;
@@ -77,10 +113,10 @@ form.checkout_coupon.woocommerce-form-coupon {
     margin: 1rem auto;
     width: 80%;
     border-radius: 27px;
-    border: 3px solid $offWhite;
+    border: 3px solid $lightGreen;
   }
   h3 {
-    color: $offWhite;
+    color: $darkBlue;
     text-align: center;
   }
   #customer_details {
@@ -121,6 +157,8 @@ form.checkout_coupon.woocommerce-form-coupon {
     text-align: center;
     button {
       margin: 1rem;
+      color: $offWhite;
+      background-color: $darkBlue;
     }
   }
 }
@@ -129,16 +167,9 @@ article#post-81 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $offWhite;
-    border-top: 3px solid $mediumGreen;
-    border-bottom: 3px solid $mediumGreen;
-    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     margin: 1rem auto;
     @media (min-width: 33.75rem) {
       width: 90%;
-      border-radius: 27px;
-      border: 3px solid $mediumGreen;
     }
   }
 }
