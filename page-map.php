@@ -24,8 +24,10 @@ get_template_part('template-parts/content-banner');
             
 		?>
         <section class='map'>
-            <p><?php the_field('map_description') ?></p>
-            
+            <article>
+                <p><?php the_field('map_description') ?></p>
+            </article>
+            <div class="map-wrapper">
             <?php 
             $image = get_field('general_map_image');
 
@@ -46,6 +48,7 @@ get_template_part('template-parts/content-banner');
                 endwhile;
             endif;
             ?>
+            </div>
         </section>
         <?php  endwhile; // End of the loop. ?>
 	</main><!-- #main -->
