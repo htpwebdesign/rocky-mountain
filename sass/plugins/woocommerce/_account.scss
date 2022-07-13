@@ -1,18 +1,40 @@
 #post-82 {
+  &:before {
+    content: "";
+    background: url("images/mountains-and-trees-green.svg") top center repeat-x;
+    background-color: $skyBlue;
+    height: 9rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: -0.125rem;
+  }
+  header {
+    margin-top: 12rem;
+    h1 {
+      margin: 0 auto;
+      background-color: $darkBlue;
+      color: $offWhite;
+      clip-path: polygon(5% 0, 100% 8%, 100% 90%, 0% 100%);
+      text-align: center;
+      width: 21rem;
+    }
+  }
   .entry-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $offWhite;
-    border-top: 3px solid $mediumGreen;
-    border-bottom: 3px solid $mediumGreen;
+    border-top: 5px solid $mediumGreen;
+    border-bottom: 5px solid $mediumGreen;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     margin: 1rem auto;
     @media (min-width: 33.75rem) {
       width: 90%;
       border-radius: 27px;
-      border: 3px solid $mediumGreen;
+      border: 5px solid $mediumGreen;
     }
     .woocommerce {
       max-width: 42.5rem;
@@ -27,7 +49,7 @@
     .woocommerce-MyAccount-navigation,
     .woocommerce-MyAccount-content {
       margin: 1rem;
-      border: 3px solid $offWhite;
+      border: 5px solid $offWhite;
       background-color: $mediumGreen;
       box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
         -3px -3px 10px 1px rgba(0, 0, 0, 35%);
@@ -39,7 +61,7 @@
   .u-column1,
   .u-column2 {
     margin: 1rem;
-    border: 3px solid $offWhite;
+    border: 5px solid $offWhite;
     background-color: $mediumGreen;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);

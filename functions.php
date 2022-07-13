@@ -406,3 +406,8 @@ add_action( 'admin_init', 'custom_remove_menu_pages' );
 function custom_remove_menu_pages() {
 	remove_menu_page( 'edit-comments.php' );
 }
+// Remove magnifying glass on woocommerce products
+add_action( 'after_setup_theme', 'bc_remove_magnifier', 100 ); function bc_remove_magnifier() { remove_theme_support( 'wc-product-gallery-zoom' ); }
+
+// Remove woocommerce sidebar
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );

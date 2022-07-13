@@ -79,59 +79,72 @@
 }
 /// End of _s CSS
 //////////////////////
-.product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $mediumGreen;
-  border-top: 3px solid $offWhite;
-  border-bottom: 3px solid $offWhite;
-  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
-  color: $offWhite;
-  max-width: 42.5rem;
-  @media (min-width: 33.75rem) {
-    margin: 1rem auto;
-    width: 80%;
-    border-radius: 27px;
-    border: 3px solid $offWhite;
+
+.single-product {
+  main::before {
+    content: "";
+    background: url("images/mountains-and-trees-green.svg") top center repeat-x;
+    background-color: $skyBlue;
+    height: 9rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: -0.125rem;
   }
-  .summary.entry-summary {
-    padding: 1rem;
-    h1 {
-      color: $offWhite;
-      text-align: center;
-      font-size: 1.5rem;
-      clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
-      background-color: $darkBlue;
-      padding: 2rem;
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $offWhite;
+    border: 3px solid $lightGreen;
+    border-radius: 27px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    color: $darkBlue;
+    max-width: 42.5rem;
+    margin: 15rem 1rem 1rem 1rem;
+    @media (min-width: 33.75rem) {
+      width: 80%;
+      margin: 15rem auto 1rem;
     }
-    .price {
-      font-size: 2rem;
-      margin-bottom: 0;
-      @media (min-width: 33.75rem) {
+    .summary.entry-summary {
+      h1 {
+        color: $darkBlue;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .price {
+        font-size: 2rem;
+        margin-bottom: 0;
         margin-left: 2rem;
       }
     }
-  }
-  form.cart {
-    display: flex;
-    justify-content: space-around;
-    input {
-      font-family: Arial, Helvetica, sans-serif;
-      width: 3rem;
+    form.cart {
+      display: flex;
+      justify-content: space-around;
+      input {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 3rem;
+      }
+      button {
+        border: 3px solid $darkBlue;
+        border-radius: 27px;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+          -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
     }
-    button {
-      border: 3px solid $darkBlue;
-      border-radius: 27px;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    .woocommerce-product-details__short-description {
+      padding: 0 1rem;
     }
-  }
-  .woocommerce-tabs,
-  .product_meta,
-  .related.products {
-    display: none;
+    .woocommerce-tabs,
+    .product_meta,
+    .related.products {
+      display: none;
+    }
   }
 }
 .woocommerce-message {
