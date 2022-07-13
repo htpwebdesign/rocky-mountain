@@ -47,6 +47,7 @@ get_template_part('template-parts/content-banner');
             ?>
             </section>
             <section class='banned-items'>
+                <article>
                 <h2><?php the_field('section_title'); ?></h2>
                 <ul>
                 <?php 
@@ -62,6 +63,7 @@ get_template_part('template-parts/content-banner');
                 ?>
                 </ul>
                 <?php  endwhile; // End of the loop. ?>
+                </article>
             </section>
         </div>
 	</main><!-- #main -->
