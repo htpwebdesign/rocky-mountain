@@ -184,3 +184,12 @@
 .main-navigation.toggled ul {
   display: block;
 }
+
+.header-hover{
+  font-size: 1.35rem;
+}
+
+.main-item:hover a{
+  background-color: $offWhite;
+
+}
