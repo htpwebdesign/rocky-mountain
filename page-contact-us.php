@@ -24,9 +24,6 @@ get_template_part('template-parts/content-banner');
 						<?php echo do_shortcode('[contact-form-7 id="328" title="Contact Us Form"]')?>
 				</div>
 			</div>
-
-
-
 		<?php endwhile; // End of the loop. ?>
 
 		</main>
