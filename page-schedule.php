@@ -21,6 +21,7 @@ get_template_part('template-parts/content-banner');
 		<?php
 		while ( have_posts() ) :
 			the_post();
+            if (function_exists ('get_field')) :
         ?>
 
         <section class='schedule-type'>
@@ -144,7 +145,8 @@ get_template_part('template-parts/content-banner');
                 </div>
             </section>
         </section>
-		<?php endwhile; // End of the loop.?>
+		<?php endif;
+    endwhile; // End of the loop.?>
 	</main><!-- #main -->
 
 <?php
