@@ -2,13 +2,13 @@
 .page-id-24,
 .page-id-40 {
   .content-wrapper {
-    background-color: $darkBlue;
-    color: $offWhite;
+    background-color: $offWhite;
+    color: $darkBlue;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     max-width: 42.5rem;
-    border-top: 3px solid $offWhite;
-    border-bottom: 3px solid $offWhite;
+    border-top: 3px solid $lightGreen;
+    border-bottom: 3px solid $lightGreen;
     form {
       text-align: center;
       .vendor-contact-info {
@@ -33,9 +33,7 @@
     input {
       padding: 0.5rem;
       border-radius: 27px;
-      border: 3px solid $mediumGreen;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+      border: 3px solid $darkBlue;
     }
     .wpcf7-submit {
       clip-path: polygon(0 0, 100% 20%, 98% 88%, 5% 100%);
@@ -45,6 +43,8 @@
       display: block;
       margin: 3rem auto 0;
       font-weight: 500;
+      background-color: $darkBlue;
+      color: $offWhite;
     }
     p {
       margin: 1rem;
@@ -54,7 +54,7 @@
       margin: 1rem auto;
       width: 80%;
       border-radius: 27px;
-      border: 3px solid $offWhite;
+      border: 3px solid $lightGreen;
     }
   }
 }
