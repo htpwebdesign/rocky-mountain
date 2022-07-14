@@ -11,14 +11,13 @@ get_header();
 get_template_part('template-parts/content-banner'); ?>
 
 	<main id="primary" class="site-main"> <?php 
-		
 		if ( have_posts() ) : 
 		endif; 				
-			?>
-			<div class="faq-beige-box">
+		?>
+		<div class="faq-beige-box">
 			<div class="faq-green-box">
 				<section class=" faq-wrapper">
- <?php
+				<?php
 					$args = array( 
 						// matches with unique name we gave the cpt
 						'post_type' => 'rmf-faq',
@@ -27,26 +26,25 @@ get_template_part('template-parts/content-banner'); ?>
 
 					$query = new WP_Query( $args );
 
-
 						if ($query -> have_posts()) :
-							
 							while ( $query -> have_posts()) :
 								$query -> the_post();
-								?><div class="faq-even-odd"><?php
-								echo '<article class="faq-article">'; ?>
-								<button class="accordion"><?php the_title(); ?></button>
-									<div class="panel">
-										<?php the_field('faq_description'); ?>
-									</div> <?php
-								echo '</article>';
-								echo '</div>';
+								if (function_exists ('get_field')) :
+								?><div class="faq-even-odd">
+									<article class="faq-article">
+										<button class="accordion"><?php the_title(); ?></button>
+										<div class="panel">
+											<?php the_field('faq_description'); ?>
+										</div>
+									</article>
+								</div>
+							<?php endif;
 							endwhile;
-							wp_reset_postdata();
+						wp_reset_postdata();
 						endif; ?>
-
 				</section>
 			</div>
-			</div>
+		</div>
 	</main><!-- #primary -->
 
 <?php

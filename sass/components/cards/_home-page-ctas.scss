@@ -2,20 +2,29 @@
 
 .home-cards {
     display: grid;
+    justify-content: center;
     gap: 2rem;
 
     article {
         display: grid;
+        justify-content: center;
         border: 2px solid $darkGreen;
-        // gap: 1rem;
+        border-radius: 1rem;
+        overflow: hidden;
 
         #home-card-cta-text {
-            padding: 1rem 2rem;
+            padding: 2rem .5rem;
             background-color: $darkGreen-75;
 
             p, h2, h3, h4 {
                 color: $offWhite;
+                margin-top: 0;
             }
+        a {
+            color: $offWhite;
+            background-color: $darkGreen;
+            padding: .5rem 1rem;
+        }
         }
 
          @include mq($tabletWide){
@@ -39,7 +48,6 @@
 
     #vendor-content-wrapper {
         border: 2px solid $darkBlue;
-        // padding: 1rem 2rem;
     }
 
     #vendor-text {

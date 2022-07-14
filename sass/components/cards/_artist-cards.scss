@@ -1,6 +1,7 @@
 .home-artists {
-    margin-top: 4rem;
+    margin: 4rem auto 2rem auto;
     display: grid;
+    justify-content: center;
     gap: 1rem;
 
     @include mq($tabletWide){
@@ -27,16 +28,9 @@
     padding: 1rem 2rem;
     background-color: $offWhite;
     border: 2px solid $darkGreen;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px $black-50;
+
 }
-
-// .artist-text-wrapper {
-
-// }
-
-// figure img {
-
-// }
-
-
 
 }

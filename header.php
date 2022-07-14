@@ -54,16 +54,7 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<!-- <nav class="ecomm-nav">
-			<?php 
-			// My Account, Cart, Checkout links 
-			// wp_nav_menu( array("theme_location" => "ecommerce")); ?>
+		<!-- <nav class="ecomm-nav">>
 		</nav> -->
-		<?php 
-			// Banner on all pages other than home
-			// $noFeatureImage = [80, 81, 79, 83, 82];
-			// if ( !is_front_page() && !is_page($noFeatureImage) && !is_single())  {
-			// 	the_post_thumbnail();
-			// }
-		?>
+
 	</header><!-- #masthead -->

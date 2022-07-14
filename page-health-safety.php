@@ -22,6 +22,8 @@ get_template_part('template-parts/content-banner');
             the_post();
 		?>
         <div class='health-safety-wrapper'>
+        <?php if (function_exists ('get_field')) : ?>
+        <div class='health-safety-wrapper interior-page-content'>
             <section>
                 <?php
                 if( have_rows('topic') ):
@@ -62,10 +64,15 @@ get_template_part('template-parts/content-banner');
                 endif;
                 ?>
                 </ul>
-                <?php  endwhile; // End of the loop. ?>
                 </article>
             </section>
+            <?php 
+                endif; 
+            ?>
+            <?php  endwhile; // End of the loop. ?>
+
         </div>
+      
 	</main><!-- #main -->
 
 <?php

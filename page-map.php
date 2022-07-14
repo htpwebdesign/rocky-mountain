@@ -21,7 +21,7 @@ get_template_part('template-parts/content-banner');
 		<?php
 		while ( have_posts() ) : 
             the_post();
-            
+        if (function_exists ('get_field')) :
 		?>
         <section class='map'>
             <article>
@@ -50,7 +50,8 @@ get_template_part('template-parts/content-banner');
             ?>
             </div>
         </section>
-        <?php  endwhile; // End of the loop. ?>
+        <?php  endif;
+    endwhile; // End of the loop. ?>
 	</main><!-- #main -->
 
 <?php

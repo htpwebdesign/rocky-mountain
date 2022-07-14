@@ -52,6 +52,55 @@ ul.products {
 // End of underscores css
 
 //RMF css
+.post-type-archive-product {
+  main {
+    &::before {
+      content: "";
+      background: url("images/mountains-and-trees-green.svg") top center
+        repeat-x;
+      background-color: $skyBlue;
+      height: 9rem;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      right: 0;
+      bottom: -0.125rem;
+    }
+    ul.products.columns-4 {
+      margin-top: 11rem;
+    }
+  }
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $offWhite;
+    border: 3px solid $lightGreen;
+    border-radius: 27px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    color: $darkBlue;
+    max-width: 42.5rem;
+    margin: 1rem;
+    @media (min-width: 33.75rem) {
+      width: 80%;
+      margin: 1rem auto;
+    }
+    a {
+      color: $darkBlue;
+      h2 {
+        color: $darkBlue;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .price {
+        font-size: 2rem;
+        margin-bottom: 0;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
 .woocommerce-ordering,
 .woocommerce-result-count {
   display: none;
@@ -61,13 +110,6 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: $offWhite;
-  &:hover {
-    color: $orange;
-  }
-  h2 {
-    color: $offWhite;
-  }
   @media (min-width: 33.75rem) {
     display: grid;
     grid-template-columns: 210px 1fr;
@@ -80,14 +122,11 @@ a.added_to_cart.wc-forward {
   border: 3px solid $darkBlue;
   border-radius: 27px;
   margin: 0.5rem;
-  background-color: $offWhite;
   box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
     -3px -3px 10px 1px rgba(0, 0, 0, 35%);
 }
 img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
-  border: 3px solid $offWhite;
-  border-radius: 27px;
-  margin: 0.5rem;
+  margin: 0.75rem;
   @media (min-width: 33.75rem) {
     grid-row: 1/4;
   }

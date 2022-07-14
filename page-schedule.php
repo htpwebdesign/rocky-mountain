@@ -21,10 +21,8 @@ get_template_part('template-parts/content-banner');
 		<?php
 		while ( have_posts() ) :
 			the_post();
+            if (function_exists ('get_field')) :
         ?>
-        <section>
-            <p><?php the_field('description'); ?></p>
-        </section>
 
         <section class='schedule-type'>
             <h2>Musical Line Up</h2>
@@ -147,7 +145,8 @@ get_template_part('template-parts/content-banner');
                 </div>
             </section>
         </section>
-		<?php endwhile; // End of the loop.?>
+		<?php endif;
+    endwhile; // End of the loop.?>
 	</main><!-- #main -->
 
 <?php

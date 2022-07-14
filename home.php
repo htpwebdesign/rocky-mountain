@@ -30,12 +30,6 @@ get_template_part('template-parts/content-banner');
 				</header>
 				<?php
 			endif;
-
-           
-
-			/* Start the Loop */
-			// while ( have_posts() ) :
-			// 	the_post();
             ?>
 			<section class="main-news-section">
 			<?php 
@@ -71,32 +65,19 @@ get_template_part('template-parts/content-banner');
 							
 						</article>
 						<?php 
-
-						
-						
 					endwhile;
 					wp_reset_postdata();
-				 endif;
-			
-			
-			?>
+				endif;?>
 
 		</section>
         <?php
-
 			// endwhile;
-
 			the_posts_navigation();
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
-
 	</main><!-- #main -->
-
 <?php
-// get_sidebar();
 get_footer();
