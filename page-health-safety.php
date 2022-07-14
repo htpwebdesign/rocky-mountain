@@ -16,15 +16,15 @@ get_header();
 get_template_part('template-parts/content-banner');
 ?>
 
-<main id="primary" class="site-main">
-    <?php
-    while ( have_posts() ) : 
-        the_post();
-    ?>
-    <div class='health-safety-wrapper'>
+	<main id="primary" class="site-main">
+        <?php
+		while ( have_posts() ) : 
+            the_post();
+		?>
         <?php if (function_exists ('get_field')) : ?>
+        <div class='health-safety-wrapper interior-page-content'>
             <section>
-                <?php                
+                <?php
                 if( have_rows('topic') ):
                     // Loop through rows.
                     while( have_rows('topic') ) : the_row();
@@ -38,6 +38,7 @@ get_template_part('template-parts/content-banner');
                                     }
                                 ?>
                             <p><?php the_sub_field('description'); ?></p>
+            
                             </div>
                         </article>
                         <?php
@@ -47,6 +48,7 @@ get_template_part('template-parts/content-banner');
             ?>
             </section>
             <section class='banned-items'>
+                <article>
                 <h2><?php the_field('section_title'); ?></h2>
                 <ul>
                 <?php 
@@ -61,11 +63,15 @@ get_template_part('template-parts/content-banner');
                 endif;
                 ?>
                 </ul>
+                </article>
             </section>
-        <?php endif; ?>
-    </div>
-    <?php  endwhile; // End of the loop. ?>
-</main><!-- #main -->
+            <?php 
+                endif; 
+            ?>
+            <?php  endwhile; // End of the loop. ?>
+
+      
+	</main><!-- #main -->
 
 <?php
 get_footer();
