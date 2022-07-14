@@ -22,9 +22,6 @@ get_template_part('template-parts/content-banner');
 		while ( have_posts() ) :
 			the_post();
         ?>
-        <section>
-            <p><?php the_field('description'); ?></p>
-        </section>
 
         <section class='schedule-type'>
             <h2>Musical Line Up</h2>
