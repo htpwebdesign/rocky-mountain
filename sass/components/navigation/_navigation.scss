@@ -26,7 +26,7 @@
   }
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 78.125em) {
   button.menu-toggle {
     display: none;
   }
@@ -79,7 +79,7 @@
       fill: $offWhite;
     }
   }
-  @media (min-width: 37.5rem) {
+  @media (min-width:  78.125em) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -89,7 +89,7 @@
 
 #site-navigation {
   margin-right: 1rem;
-  @media (min-width: 33.75rem) {
+  @media (min-width: 78.125em) {
     margin-right: unset;
   }
 
@@ -98,7 +98,7 @@
     flex-direction: column;
     justify-content: center;
     clip-path: polygon(8% 0, 94% 0, 100% 100%, 0% 100%);
-    li {
+    a {
       padding: 0.5rem;
       text-align: center;
     }
@@ -130,7 +130,7 @@
         }
       }
     }
-    @media (min-width: 37.5rem) {
+    @media (min-width:  78.125em) {
       flex-direction: row;
       clip-path: unset;
       background-color: unset;
@@ -143,7 +143,7 @@
     position: absolute;
     top: 5rem;
     right: 2rem;
-    @media (min-width: 37.5rem) {
+    @media (min-width:  78.125em) {
       position: static;
       margin-top: 1rem;
     }
@@ -154,7 +154,7 @@
 }
 .site-branding {
   margin: 0 1rem;
-  @media (min-width: 33.75rem) {
+  @media (min-width:  78.125em) {
     margin: 0 0 0 0.5rem;
   }
 }
@@ -183,4 +183,17 @@
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+}
+
+.header-hover{
+  font-size: 1.35rem;
+}
+
+.main-item:hover a{
+  background-color: $offWhite;
+
+}
+
+.custom-logo-link:focus {
+  outline: 1px dotted white;
 }

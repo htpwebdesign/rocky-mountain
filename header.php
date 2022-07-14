@@ -44,6 +44,7 @@
 						c-29.9,6.9-50.5-21.7-50.5-21.7l-5.4,75.9C301.4,330.5,279.1,179.2,276.1,64.6z"/>
 				</svg>
 			</button>
+			<div class="header-hover">
 			<?php
 			wp_nav_menu(
 				array(
@@ -53,6 +54,7 @@
 				)
 			);
 			?>
+			</div>
 		</nav><!-- #site-navigation -->
 		<!-- <nav class="ecomm-nav">>
 		</nav> -->
