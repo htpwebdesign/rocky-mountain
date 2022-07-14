@@ -3,7 +3,7 @@
 
     .footer {
         background-color: $darkGreen;
-        margin: -0.125rem auto -3rem auto;
+        margin: 0 auto;
         position: relative;
         z-index: 2;
         .footer-wrapper {
@@ -112,8 +112,8 @@
 
 
 // Vendors Page Footer
-.home .site-footer {
-    margin-top: -7rem;
-}
+// .home .site-footer {
+//     margin-top: -7rem;
+// }
 
 @import 'featured-vendors'
