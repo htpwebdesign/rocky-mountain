@@ -46,7 +46,7 @@ get_template_part('template-parts/content-banner'); ?>
             
         </section>
     </div>
-    <div class="main-interior-wrapper">
+
 
 
     <section class="grid lineup-wrapper grid-wrapper">
@@ -116,6 +116,6 @@ get_template_part('template-parts/content-banner'); ?>
             </main>
             </div>
         </section>
-    </div>
+    
 <?php
 get_footer();
