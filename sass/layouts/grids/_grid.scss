@@ -178,8 +178,8 @@
     flex-direction: column;
     align-items: center;
     background-color: $offWhite;
-    border-top: 3px solid $mediumGreen;
-    border-bottom: 3px solid $mediumGreen;
+    border-top: 3px solid $lightGreen;
+    border-bottom: 3px solid $lightGreen;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
       -3px -3px 10px 1px rgba(0, 0, 0, 35%);
     margin: 0 auto;
@@ -187,17 +187,13 @@
       margin: 1rem auto;
       width: 80%;
       border-radius: 27px;
-      border: 3px solid $mediumGreen;
+      border: 3px solid $lightGreen;
     }
     article {
       max-width: 42.5rem;
-      box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-        -3px -3px 10px 1px rgba(0, 0, 0, 35%);
-      border: 3px solid $offWhite;
-      border-radius: 27px;
       margin: 2rem;
-      color: $offWhite;
-      background-color: $mediumGreen;
+      color: $darkBlue;
+      background-color: $offWhite;
       .entry-meta {
         margin-left: 1rem;
       }
@@ -206,10 +202,7 @@
         padding: 1rem;
       }
       a {
-        color: $offWhite;
-        &:hover {
-          color: $orange;
-        }
+        color: $darkBlue;
       }
     }
     .post-navigation {
@@ -233,9 +226,6 @@
 
         a span {
           color: $offWhite;
-          &:hover {
-            color: $orange;
-          }
         }
       }
       .nav-next {
@@ -253,9 +243,6 @@
 
         a span {
           color: $offWhite;
-          &:hover {
-            color: $orange;
-          }
         }
       }
     }
@@ -263,14 +250,14 @@
 }
 
 //FAQ
-.post-type-archive-rmf-faq{
+.post-type-archive-rmf-faq {
   .faq-wrapper {
     padding: 3rem 0;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .faq-green-box {
     background-color: $mediumGreen;
     width: 70%;
@@ -278,10 +265,10 @@
     margin: 0 auto;
     border-radius: 27px;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 35%),
-    -3px -3px 10px 1px rgba(0, 0, 0, 35%);
-  border: 3px solid $offWhite;
+      -3px -3px 10px 1px rgba(0, 0, 0, 35%);
+    border: 3px solid $offWhite;
   }
-  
+
   .faq-beige-box {
     background-color: $offWhite;
     width: 90%;
@@ -294,9 +281,8 @@
   }
   .faq-article {
     max-width: 90%;
-
   }
-  .faq-even-odd{
+  .faq-even-odd {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -305,10 +291,8 @@
     background-image: url("images/accordion2.svg");
     background-repeat: repeat;
     background-size: 100%;
-    padding: .5rem 0;
-
+    padding: 0.5rem 0;
   }
-
 }
 
 //404 page
@@ -409,4 +393,3 @@
     }
   }
 }
-
