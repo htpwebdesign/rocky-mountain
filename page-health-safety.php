@@ -21,7 +21,6 @@ get_template_part('template-parts/content-banner');
 		while ( have_posts() ) : 
             the_post();
 		?>
-        <div class='health-safety-wrapper'>
         <?php if (function_exists ('get_field')) : ?>
         <div class='health-safety-wrapper interior-page-content'>
             <section>
@@ -39,7 +38,7 @@ get_template_part('template-parts/content-banner');
                                     }
                                 ?>
                             <p><?php the_sub_field('description'); ?></p>
-
+            
                             </div>
                         </article>
                         <?php
@@ -71,7 +70,6 @@ get_template_part('template-parts/content-banner');
             ?>
             <?php  endwhile; // End of the loop. ?>
 
-        </div>
       
 	</main><!-- #main -->
 
