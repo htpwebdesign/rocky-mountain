@@ -366,11 +366,20 @@ wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard
 }
 function custom_dashboard_help() {
 echo '<p>Welcome to the back end of your Rocky Mountain Fest website! Need help? <a
-href="mailto:yourusername@gmail.com">Contact MAJC Creative Solutions</a>. For WordPress Tutorials prefer refer to the information package provided by your development team or this <a href="https://www.youtube.com/watch?v=kYY88h5J86A"
-target="_blank">video</a> might be helpful.</p>';
+href="mailto:yourusername@gmail.com">Contact MAJC Creative Solutions</a>. And here are the tutorial videos that we put together for you if you need a refresher.
+	<p>News Tutorial</p>
+	<video controls><source src='.wp_get_attachment_url('451').' type="video/mp4">Your browser does not support embedded videos.</video>
+	<p>Content Tutorial</p>
+	<video controls><source src='.wp_get_attachment_url('450').' type="video/mp4">Your browser does not support embedded videos.</video>
+	<p>Home Page Tutorial</p>
+	<video controls><source src='.wp_get_attachment_url('449').' type="video/mp4">Your browser does not support embedded videos.</video>
+	<p>Line-Up/Workshops/Vendors Tutorial</p>
+	<video controls><source src='.wp_get_attachment_url('448').' type="video/mp4">Your browser does not support embedded videos.</video>
+	<p>Tickets Tutorial</p>
+	<video controls><source src='.wp_get_attachment_url('447').' type="video/mp4">Your browser does not support embedded videos.</video>';
 }
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
-
+// wp_get_attachment_url() enter ID for the video, enter as source for video 
 // Custom back end menu 
 function wpse_custom_menu_order( $menu_ord ) {
 if ( !$menu_ord ) return true;
