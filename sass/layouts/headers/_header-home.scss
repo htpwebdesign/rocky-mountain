@@ -115,6 +115,9 @@
                     padding: 0.5rem 1.25rem 0.75rem 1.25rem;
                     clip-path: polygon(3% 0, 96% 11%, 91% 79%, 9% 91%);
                 }
+                a:focus {
+                    background-color: black;
+                }
                 
                 &:nth-child(2) a {
                     font-size: 0.9rem;
@@ -124,13 +127,12 @@
                     padding: 0.5rem 1.25rem 0.75rem 1.25rem;
                     clip-path: polygon(3% 0, 96% 11%, 91% 79%, 9% 91%);
                 }
+                &:nth-child(2) a:focus {
+                    background-color: black;
+                }
             }
         }
     }
-}
-
-.hero-ctas a:focus{
-    outline: 3px dotted black;
 }
 
 .news-article a:focus{
